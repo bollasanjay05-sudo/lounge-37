@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +19,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -70,16 +70,16 @@
     }
 
     .logo-frame {
-      width: 260px;
-      height: 64px;
+      width: clamp(360px, 42vw, 620px);
+      height: clamp(86px, 9vw, 150px);
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      background: #111;
-      border: 1px solid rgba(205, 127, 50, .45);
-      border-radius: 6px;
-      padding: 2px;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
     }
 
     .logo-art {
@@ -360,7 +360,7 @@
       .header-inner { height: auto; padding: 10px 0; }
       .main-nav { display: none; }
       .btn { min-height: 42px; padding: 0 13px; font-size: .72rem; }
-      .logo-frame { width: 170px; height: 52px; }
+      .logo-frame { width: min(310px, 66vw); height: 78px; }
       .hero { min-height: 88vh; }
       .menu-head, .category, .contact-grid { grid-template-columns: 1fr; }
       .menu-head { align-items: start; }
@@ -385,7 +385,7 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a href="#home" class="logo-frame" aria-label="Lounge 37 home">
-        <img src="assets/9792DE8E-5B26-4ACD-9131-DAAC61BAF2AE%20(1).PNG" class="logo-art" alt="Lounge 37 Steakhouse and Burger Bar" />
+        <img src="assets/logo/ChatGPT%20Image%20Jun%209,%202026,%2004_58_32%20PM.png" class="logo-art" alt="Lounge 37 Steakhouse and Burger Bar" />
       </a>
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#menu">Menu</a>
@@ -526,7 +526,7 @@
       </div>
 
       <div class="bar-slider">
-        <img id="barSliderImage" src="assets/menu/Drinks/Foto-10.jpg" alt="Lounge 37 Bar" />
+        <img id="barSliderImage" src="assets/Bar/Foto-10.jpg" alt="Lounge 37 Bar" />
       </div>
     </section>
 
@@ -564,14 +564,14 @@
 
     document.querySelectorAll('[data-slider="hero"]').forEach(slider => rotateSlides(slider, '.hero-slide', 3800));
     const barImages = [
-      'assets/menu/Drinks/Foto-10.jpg',
-      'assets/menu/Drinks/Foto-11.jpg',
-      'assets/menu/Drinks/Foto-21.jpg',
-      'assets/menu/Drinks/Foto-22.jpg',
-      'assets/menu/Drinks/R6II4061.jpg',
-      'assets/menu/Drinks/R6II4083.jpg',
-      'assets/menu/Drinks/R6II4160.jpg',
-      'assets/menu/Drinks/R6II4280.jpg'
+      'assets/Bar/Foto-10.jpg',
+      'assets/Bar/Foto-11.jpg',
+      'assets/Bar/Foto-21.jpg',
+      'assets/Bar/Foto-22.jpg',
+      'assets/Bar/R6II4061.jpg',
+      'assets/Bar/R6II4083.jpg',
+      'assets/Bar/R6II4160.jpg',
+      'assets/Bar/R6II4280.jpg'
     ];
 
     function startBarGallery() {
@@ -616,3 +616,4 @@
   </script>
 </body>
 </html>
+```
