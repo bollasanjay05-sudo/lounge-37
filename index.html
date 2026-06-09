@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +18,7 @@
     }
 
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -62,7 +62,7 @@
     }
 
     .header-inner {
-      height: 82px;
+      height: 96px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -70,8 +70,8 @@
     }
 
     .logo-frame {
-      width: clamp(360px, 42vw, 620px);
-      height: clamp(86px, 9vw, 150px);
+      width: clamp(260px, 30vw, 420px);
+      height: 72px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -360,7 +360,7 @@
       .header-inner { height: auto; padding: 10px 0; }
       .main-nav { display: none; }
       .btn { min-height: 42px; padding: 0 13px; font-size: .72rem; }
-      .logo-frame { width: min(310px, 66vw); height: 78px; }
+      .logo-frame { width: min(250px, 56vw); height: 60px; }
       .hero { min-height: 88vh; }
       .menu-head, .category, .contact-grid { grid-template-columns: 1fr; }
       .menu-head { align-items: start; }
@@ -500,20 +500,22 @@
         </article>
 
         <article class="category" data-category='[
-          {"name":"Signature Cocktails","ingredients":"Premium cocktails, classic mixes, wine, champagne, whiskey and bourbon.","image":"assets/menu/Drinks/Foto-10.jpg"},
-          {"name":"Wine Selection","ingredients":"Red, white, sparkling, and champagne selections for steakhouse dining.","image":"assets/menu/Drinks/Foto-21.jpg"},
-          {"name":"Whiskey & Bourbon","ingredients":"Premium whiskey and bourbon selection for evening lounge atmosphere.","image":"assets/menu/Drinks/R6II4061.jpg"}
+          {"name":"Signature Cocktails","ingredients":"Fresh citrus, premium spirits, cold foam, fruit garnish and Lounge 37 bar finish.","image":"assets/menu/Drinks/R6II4140.jpg"},
+          {"name":"Pink Lounge Cocktail","ingredients":"Creamy cocktail blend, ice, cherry garnish, neon bar glow and smooth finish.","image":"assets/menu/Drinks/R6II4202.jpg"},
+          {"name":"Passion Cocktail","ingredients":"Passion fruit, bright citrus, premium spirit, ice and fresh tropical garnish.","image":"assets/menu/Drinks/R6II4237.jpg"},
+          {"name":"Red Velvet Cocktail","ingredients":"Red fruit, citrus, foam, floral garnish and premium Lounge 37 presentation.","image":"assets/menu/Drinks/R6II4199.jpg"}
         ]'>
           <div class="category-copy">
             <p class="category-title">Lounge 37 Bar</p>
             <h3 class="luxury dish-name">Signature Cocktails</h3>
-            <p class="dish-ingredients">Premium cocktails, classic mixes, wine, champagne, whiskey and bourbon.</p>
+            <p class="dish-ingredients">Fresh citrus, premium spirits, cold foam, fruit garnish and Lounge 37 bar finish.</p>
             <div class="dots" aria-hidden="true"></div>
           </div>
           <div class="category-media">
-            <img class="dish-photo is-active" src="assets/menu/Drinks/Foto-10.jpg" alt="Signature Cocktails" />
-            <img class="dish-photo" src="assets/menu/Drinks/Foto-21.jpg" alt="Wine Selection" />
-            <img class="dish-photo" src="assets/menu/Drinks/R6II4061.jpg" alt="Whiskey and Bourbon" />
+            <img class="dish-photo is-active" src="assets/menu/Drinks/R6II4140.jpg" alt="Signature Cocktails" />
+            <img class="dish-photo" src="assets/menu/Drinks/R6II4202.jpg" alt="Pink Lounge Cocktail" />
+            <img class="dish-photo" src="assets/menu/Drinks/R6II4237.jpg" alt="Passion Cocktail" />
+            <img class="dish-photo" src="assets/menu/Drinks/R6II4199.jpg" alt="Red Velvet Cocktail" />
           </div>
         </article>
       </div>
@@ -526,7 +528,7 @@
       </div>
 
       <div class="bar-slider">
-        <img id="barSliderImage" src="assets/Bar/Foto-10.jpg" alt="Lounge 37 Bar" />
+        <img id="barSliderImage" src="assets/Bar/R6II4140.jpg" alt="Lounge 37 Bar" />
       </div>
     </section>
 
@@ -564,14 +566,34 @@
 
     document.querySelectorAll('[data-slider="hero"]').forEach(slider => rotateSlides(slider, '.hero-slide', 3800));
     const barImages = [
-      'assets/Bar/Foto-10.jpg',
-      'assets/Bar/Foto-11.jpg',
-      'assets/Bar/Foto-21.jpg',
-      'assets/Bar/Foto-22.jpg',
-      'assets/Bar/R6II4061.jpg',
+      'assets/Bar/R6II4140.jpg',
+      'assets/Bar/R6II4130.jpg',
+      'assets/Bar/R6II4202.jpg',
+      'assets/Bar/R6II4199.jpg',
+      'assets/Bar/R6II4237.jpg',
+      'assets/Bar/R6II4205.jpg',
       'assets/Bar/R6II4083.jpg',
+      'assets/Bar/R6II4177.jpg',
+      'assets/Bar/R6II4061.jpg',
+      'assets/Bar/R6II4216.jpg',
+      'assets/Bar/R6II4446.jpg',
+      'assets/Bar/R6II4195.jpg',
+      'assets/Bar/R6II4088.jpg',
+      'assets/Bar/R6II4289.jpg',
       'assets/Bar/R6II4160.jpg',
-      'assets/Bar/R6II4280.jpg'
+      'assets/Bar/R6II4378.jpg',
+      'assets/Bar/R6II4235.jpg',
+      'assets/Bar/R6II4343.jpg',
+      'assets/Bar/R6II4161.jpg',
+      'assets/Bar/R6II4400.jpg',
+      'assets/Bar/R6II4090.jpg',
+      'assets/Bar/R6II4224.jpg',
+      'assets/Bar/R6II4419.jpg',
+      'assets/Bar/R6II4182.jpg',
+      'assets/Bar/R6II4146.jpg',
+      'assets/Bar/R6II4218.jpg',
+      'assets/Bar/R6II4280.jpg',
+      'assets/Bar/R6II4406.jpg'
     ];
 
     function startBarGallery() {
@@ -616,4 +638,3 @@
   </script>
 </body>
 </html>
-```
