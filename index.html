@@ -9,6 +9,7 @@
     :root {
       --black: #070504;
       --panel: #15100c;
+      --panel-2: #211711;
       --line: #342319;
       --gold: #cd7f32;
       --cream: #f7efe6;
@@ -17,6 +18,7 @@
     }
 
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -148,7 +150,8 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(0deg, rgba(7, 5, 4, .46), rgba(7, 5, 4, .08) 48%, rgba(7, 5, 4, .36));
+      background:
+        linear-gradient(0deg, rgba(7, 5, 4, .46), rgba(7, 5, 4, .08) 48%, rgba(7, 5, 4, .36));
     }
 
     .strip {
@@ -262,6 +265,14 @@
       transform: scale(1.06);
     }
 
+    .category-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(21, 16, 12, .18), rgba(21, 16, 12, 0));
+      pointer-events: none;
+    }
+
     .dots {
       display: flex;
       gap: 8px;
@@ -273,6 +284,7 @@
       height: 4px;
       border-radius: 999px;
       background: rgba(255, 255, 255, .22);
+      transition: background 220ms ease, width 220ms ease;
     }
 
     .dot.is-active {
@@ -351,6 +363,7 @@
       .logo-frame { width: 170px; height: 52px; }
       .hero { min-height: 88vh; }
       .menu-head, .category, .contact-grid { grid-template-columns: 1fr; }
+      .menu-head { align-items: start; }
       .category { min-height: 0; }
       .category:nth-of-type(even) .category-copy { order: 2; }
       .category:nth-of-type(even) .category-media { order: 1; }
@@ -358,13 +371,21 @@
       .category-copy { min-height: 380px; }
       .bar-slider { height: 60vh; }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="wrap header-inner">
       <a href="#home" class="logo-frame" aria-label="Lounge 37 home">
-        <img src="assets/lounge-37-steakhouse-burger-logo.png" class="logo-art" alt="Lounge 37 Steakhouse and Burger Bar" />
+        <img src="assets/9792DE8E-5B26-4ACD-9131-DAAC61BAF2AE%20(1).PNG" class="logo-art" alt="Lounge 37 Steakhouse and Burger Bar" />
       </a>
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#menu">Menu</a>
@@ -378,14 +399,14 @@
   <main>
     <section id="home" class="hero" aria-label="Lounge 37">
       <div class="hero-media" data-slider="hero">
-        <img class="hero-slide is-active" src="assets/original/ambiance/R6II1285.jpg" alt="" />
-        <img class="hero-slide" src="assets/original/ambiance/R6II1294.jpg" alt="" />
-        <img class="hero-slide" src="assets/original/ambiance/R6II1334.jpg" alt="" />
-        <img class="hero-slide" src="assets/original/ambiance/R6II1397.jpg" alt="" />
-        <img class="hero-slide" src="assets/original/ambiance/R6II1453.jpg" alt="" />
-        <img class="hero-slide" src="assets/original/ambiance/R6II1496.jpg" alt="" />
-        <img class="hero-slide" src="assets/original/ambiance/R6II1561.jpg" alt="" />
-        <img class="hero-slide" src="assets/original/ambiance/R6II1762.jpg" alt="" />
+        <img class="hero-slide is-active" src="assets/Ambience/R6II1285.jpg" alt="" />
+        <img class="hero-slide" src="assets/Ambience/R6II1294.jpg" alt="" />
+        <img class="hero-slide" src="assets/Ambience/R6II1334.jpg" alt="" />
+        <img class="hero-slide" src="assets/Ambience/R6II1397.jpg" alt="" />
+        <img class="hero-slide" src="assets/Ambience/R6II1453.jpg" alt="" />
+        <img class="hero-slide" src="assets/Ambience/R6II1496.jpg" alt="" />
+        <img class="hero-slide" src="assets/Ambience/R6II1561.jpg" alt="" />
+        <img class="hero-slide" src="assets/Ambience/R6II1762.jpg" alt="" />
       </div>
     </section>
 
@@ -402,7 +423,99 @@
           <h2 class="luxury section-title">Menu</h2>
         </div>
 
-        <!-- menu cards and slider content continue here exactly as in the local file -->
+        <article class="category" data-category='[
+          {"name":"Argentinian Black Angus Ribeye","ingredients":"Premium black angus ribeye, flame grilled and served with Lounge 37 steak seasoning.","image":"assets/menu/Steaks/R6II3355.jpg"},
+          {"name":"Fillet Mignon Argentinian Black Angus","ingredients":"Tender black angus fillet with chimichurri, bourbon, demi-glace, or pepper sauce.","image":"assets/menu/Steaks/R6II3717.jpg"},
+          {"name":"T-Bone Steak","ingredients":"Fire-grilled T-bone steak with grilled vegetables and house sauce.","image":"assets/menu/Steaks/R6II3760.jpg"},
+          {"name":"Chef Steak Special","ingredients":"A rich steakhouse plate with seared beef, herbs, sauce, and warm Lounge 37 styling.","image":"assets/ChatGPT%20Image%20Jun%209,%202026,%2004_58_32%20PM.png"}
+        ]'>
+          <div class="category-copy">
+            <p class="category-title">Steaks</p>
+            <h3 class="luxury dish-name">Argentinian Black Angus Ribeye</h3>
+            <p class="dish-ingredients">Premium black angus ribeye, flame grilled and served with Lounge 37 steak seasoning.</p>
+            <div class="dots" aria-hidden="true"></div>
+          </div>
+          <div class="category-media">
+            <img class="dish-photo is-active" src="assets/menu/Steaks/R6II3355.jpg" alt="Argentinian Black Angus Ribeye" />
+            <img class="dish-photo" src="assets/menu/Steaks/R6II3717.jpg" alt="Fillet Mignon Argentinian Black Angus" />
+            <img class="dish-photo" src="assets/menu/Steaks/R6II3760.jpg" alt="T-Bone Steak" />
+            <img class="dish-photo" src="assets/ChatGPT%20Image%20Jun%209,%202026,%2004_58_32%20PM.png" alt="Chef Steak Special" />
+          </div>
+        </article>
+
+        <article class="category" data-category='[
+          {"name":"Lounge Classic Burger","ingredients":"Beef patty, cheese, fresh salad, house sauce, French fries, saffron aioli.","image":"assets/menu/Burgers/R6II3521.jpg"},
+          {"name":"Bacon Cheese Burger","ingredients":"Beef patty, crispy bacon, cheddar, pickles, burger sauce, French fries.","image":"assets/menu/Burgers/R6II3584.jpg"},
+          {"name":"Truffle Burger","ingredients":"Beef patty, truffle sauce, cheese, caramelized onion, French fries.","image":"assets/menu/Burgers/R6II3601.jpg"},
+          {"name":"Chef Burger Special","ingredients":"A gourmet burger with melted cheese, pickles, house sauce, and crisp fries.","image":"assets/menu/Burgers/R6II3613.jpg"}
+        ]'>
+          <div class="category-copy">
+            <p class="category-title">Burgers</p>
+            <h3 class="luxury dish-name">Lounge Classic Burger</h3>
+            <p class="dish-ingredients">Beef patty, cheese, fresh salad, house sauce, French fries, saffron aioli.</p>
+            <div class="dots" aria-hidden="true"></div>
+          </div>
+          <div class="category-media">
+            <img class="dish-photo is-active" src="assets/menu/Burgers/R6II3521.jpg" alt="Lounge Classic Burger" />
+            <img class="dish-photo" src="assets/menu/Burgers/R6II3584.jpg" alt="Bacon Cheese Burger" />
+            <img class="dish-photo" src="assets/menu/Burgers/R6II3601.jpg" alt="Truffle Burger" />
+            <img class="dish-photo" src="assets/menu/Burgers/R6II3613.jpg" alt="Chef Burger Special" />
+          </div>
+        </article>
+
+        <article class="category" data-category='[
+          {"name":"Beef Tartare","ingredients":"Fresh beef tartare, seasoning, herbs, crispy bread.","image":"assets/menu/Starters/R6II3238.jpg"},
+          {"name":"Beef Carpaccio","ingredients":"Thin sliced beef, parmesan, rocket, olive oil, citrus dressing.","image":"assets/menu/Starters/R6II3294.jpg"},
+          {"name":"Cheese Board","ingredients":"Selection of cheeses with fruits, nuts, and house pairing.","image":"assets/menu/Starters/R6II3333.jpg"}
+        ]'>
+          <div class="category-copy">
+            <p class="category-title">Starters</p>
+            <h3 class="luxury dish-name">Beef Tartare</h3>
+            <p class="dish-ingredients">Fresh beef tartare, seasoning, herbs, crispy bread.</p>
+            <div class="dots" aria-hidden="true"></div>
+          </div>
+          <div class="category-media">
+            <img class="dish-photo is-active" src="assets/menu/Starters/R6II3238.jpg" alt="Beef Tartare" />
+            <img class="dish-photo" src="assets/menu/Starters/R6II3294.jpg" alt="Beef Carpaccio" />
+            <img class="dish-photo" src="assets/menu/Starters/R6II3333.jpg" alt="Cheese Board" />
+          </div>
+        </article>
+
+        <article class="category" data-category='[
+          {"name":"New York Cheesecake","ingredients":"Classic cheesecake with smooth cream texture and berry garnish.","image":"assets/menu/dessert/R6II3419.jpg"},
+          {"name":"Chocolate Biscuit","ingredients":"Rich chocolate dessert with biscuit base and soft cream finish.","image":"assets/menu/dessert/R6II3454.jpg"},
+          {"name":"Sorbet","ingredients":"Refreshing fruit sorbet served chilled.","image":"assets/menu/dessert/R6II3486.jpg"}
+        ]'>
+          <div class="category-copy">
+            <p class="category-title">Desserts</p>
+            <h3 class="luxury dish-name">New York Cheesecake</h3>
+            <p class="dish-ingredients">Classic cheesecake with smooth cream texture and berry garnish.</p>
+            <div class="dots" aria-hidden="true"></div>
+          </div>
+          <div class="category-media">
+            <img class="dish-photo is-active" src="assets/menu/dessert/R6II3419.jpg" alt="New York Cheesecake" />
+            <img class="dish-photo" src="assets/menu/dessert/R6II3454.jpg" alt="Chocolate Biscuit" />
+            <img class="dish-photo" src="assets/menu/dessert/R6II3486.jpg" alt="Sorbet" />
+          </div>
+        </article>
+
+        <article class="category" data-category='[
+          {"name":"Signature Cocktails","ingredients":"Premium cocktails, classic mixes, wine, champagne, whiskey and bourbon.","image":"assets/menu/Drinks/Foto-10.jpg"},
+          {"name":"Wine Selection","ingredients":"Red, white, sparkling, and champagne selections for steakhouse dining.","image":"assets/menu/Drinks/Foto-21.jpg"},
+          {"name":"Whiskey & Bourbon","ingredients":"Premium whiskey and bourbon selection for evening lounge atmosphere.","image":"assets/menu/Drinks/R6II4061.jpg"}
+        ]'>
+          <div class="category-copy">
+            <p class="category-title">Lounge 37 Bar</p>
+            <h3 class="luxury dish-name">Signature Cocktails</h3>
+            <p class="dish-ingredients">Premium cocktails, classic mixes, wine, champagne, whiskey and bourbon.</p>
+            <div class="dots" aria-hidden="true"></div>
+          </div>
+          <div class="category-media">
+            <img class="dish-photo is-active" src="assets/menu/Drinks/Foto-10.jpg" alt="Signature Cocktails" />
+            <img class="dish-photo" src="assets/menu/Drinks/Foto-21.jpg" alt="Wine Selection" />
+            <img class="dish-photo" src="assets/menu/Drinks/R6II4061.jpg" alt="Whiskey and Bourbon" />
+          </div>
+        </article>
       </div>
     </section>
 
@@ -411,8 +524,9 @@
         <p class="eyebrow">Special Gallery</p>
         <h2 class="luxury section-title">Lounge 37 Bar</h2>
       </div>
+
       <div class="bar-slider">
-        <img id="barSliderImage" src="assets/original/bar/Foto-10.jpg" alt="Lounge 37 Bar" />
+        <img id="barSliderImage" src="assets/menu/Drinks/Foto-10.jpg" alt="Lounge 37 Bar" />
       </div>
     </section>
 
@@ -435,5 +549,70 @@
   </main>
 
   <footer>2026 Lounge 37 - Steakhouse & Burger Bar - Riga</footer>
+
+  <script>
+    function rotateSlides(container, selector, delay) {
+      const slides = Array.from(container.querySelectorAll(selector));
+      if (slides.length < 2) return;
+      let index = 0;
+      setInterval(() => {
+        slides[index].classList.remove('is-active');
+        index = (index + 1) % slides.length;
+        slides[index].classList.add('is-active');
+      }, delay);
+    }
+
+    document.querySelectorAll('[data-slider="hero"]').forEach(slider => rotateSlides(slider, '.hero-slide', 3800));
+    const barImages = [
+      'assets/menu/Drinks/Foto-10.jpg',
+      'assets/menu/Drinks/Foto-11.jpg',
+      'assets/menu/Drinks/Foto-21.jpg',
+      'assets/menu/Drinks/Foto-22.jpg',
+      'assets/menu/Drinks/R6II4061.jpg',
+      'assets/menu/Drinks/R6II4083.jpg',
+      'assets/menu/Drinks/R6II4160.jpg',
+      'assets/menu/Drinks/R6II4280.jpg'
+    ];
+
+    function startBarGallery() {
+      const img = document.getElementById('barSliderImage');
+      if (!img) return;
+      let index = 0;
+
+      function showBarImage() {
+        img.src = barImages[index];
+        index = (index + 1) % barImages.length;
+      }
+
+      showBarImage();
+      setInterval(showBarImage, 5000);
+    }
+
+    startBarGallery();
+
+    document.querySelectorAll('.category').forEach((category, categoryIndex) => {
+      const dishes = JSON.parse(category.dataset.category);
+      const title = category.querySelector('.dish-name');
+      const ingredients = category.querySelector('.dish-ingredients');
+      const photos = Array.from(category.querySelectorAll('.dish-photo'));
+      const dots = category.querySelector('.dots');
+      let active = 0;
+
+      dots.innerHTML = dishes.map((_, index) => `<span class="dot ${index === 0 ? 'is-active' : ''}"></span>`).join('');
+      const dotEls = Array.from(dots.querySelectorAll('.dot'));
+
+      function showDish(next) {
+        photos[active]?.classList.remove('is-active');
+        dotEls[active]?.classList.remove('is-active');
+        active = next;
+        title.textContent = dishes[active].name;
+        ingredients.textContent = dishes[active].ingredients;
+        photos[active]?.classList.add('is-active');
+        dotEls[active]?.classList.add('is-active');
+      }
+
+      setInterval(() => showDish((active + 1) % dishes.length), 4300 + categoryIndex * 350);
+    });
+  </script>
 </body>
 </html>
