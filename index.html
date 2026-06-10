@@ -1,4 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lounge 37 | Premium Burger Bar & Steakhouse Riga</title>
+  <meta name="description" content="Lounge 37 in Old Riga: premium steaks, signature burgers, starters, desserts, cocktails, and a full Lounge 37 bar gallery." />
+  <style>
+    :root {
+      --black: #070504;
+      --panel: #15100c;
+      --panel-2: #211711;
+      --line: #342319;
+      --gold: #cd7f32;
+      --cream: #f7efe6;
+      --muted: #b7aaa0;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .42);
+    }
 
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--cream);
+      font-family: Inter, Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    section { scroll-margin-top: 92px; }
+
+    .wrap {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .luxury {
+      font-family: Georgia, "Times New Roman", serif;
+      letter-spacing: 0;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 50;
+      border-bottom: 1px solid rgba(255, 255, 255, .12);
+      background: rgba(7, 5, 4, .78);
+      backdrop-filter: blur(16px);
+    }
+
+    .header-inner {
+      height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo-frame {
+      width: clamp(260px, 30vw, 420px);
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+    }
+
+    .logo-art {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      padding: 0;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(14px, 2.5vw, 32px);
+      color: #ddd4cb;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .main-nav a:hover { color: var(--gold); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      border-radius: 6px;
+      padding: 0 18px;
+      border: 1px solid rgba(205, 127, 50, .85);
+      background: var(--gold);
+      color: #0c0705;
+      font-size: .82rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      min-height: 88vh;
+      position: relative;
+      overflow: hidden;
+      background: #050302;
+    }
+
+    .hero-media, .hero-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-slide {
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.02);
+      transition: opacity 900ms ease, transform 5200ms ease;
+    }
+
+    .hero-slide.is-active {
+      opacity: 1;
+      transform: scale(1.07);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(0deg, rgba(7, 5, 4, .46), rgba(7, 5, 4, .08) 48%, rgba(7, 5, 4, .36));
+    }
+
+    .strip {
+      border-block: 1px solid var(--line);
+      background: #120c08;
+      overflow: hidden;
+      padding: 14px 0;
+    }
+
+    .marquee {
+      width: max-content;
+      display: flex;
+      gap: 36px;
+      color: var(--gold);
+      font-size: .8rem;
+      font-weight: 900;
+      letter-spacing: .27em;
+      text-transform: uppercase;
+      animation: marquee 30s linear infinite;
+    }
+
+    @keyframes marquee {
+      to { transform: translateX(-50%); }
+    }
+
+    .section-title {
+      font-size: clamp(2.8rem, 7vw, 6.8rem);
+      line-height: .88;
+      margin: 0 0 24px;
+    }
+
+    .menu {
+      padding: 108px 0;
+      background: #090604;
+    }
+
+    .menu-head {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .category {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      min-height: 560px;
+      margin-top: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .category:nth-of-type(even) .category-copy { order: 2; }
+    .category:nth-of-type(even) .category-media { order: 1; }
+
+    .category-copy {
+      padding: clamp(28px, 5vw, 58px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .category-title {
+      color: var(--gold);
+      font-size: clamp(2.4rem, 5vw, 5.8rem);
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin: 0 0 28px;
+    }
+
+    .dish-name {
+      font-size: clamp(1.9rem, 4vw, 4.2rem);
+      line-height: .96;
+      margin: 0 0 20px;
+      max-width: 520px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .dish-ingredients {
+      color: #d5c8be;
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      line-height: 1.75;
+      margin: 0 0 28px;
+      max-width: 560px;
+    }
+
+    .category-media {
+      position: relative;
+      min-height: 430px;
+      background: #050302;
+    }
+
+    .dish-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.01);
+      transition: opacity 800ms ease, transform 5200ms ease;
+    }
+
+    .dish-photo.is-active {
+      opacity: 1;
+      transform: scale(1.06);
+    }
+
+    .category-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(21, 16, 12, .18), rgba(21, 16, 12, 0));
+      pointer-events: none;
+    }
+
+    .dots {
+      display: flex;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .dot {
+      width: 32px;
+      height: 4px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .22);
+      transition: background 220ms ease, width 220ms ease;
+    }
+
+    .dot.is-active {
+      width: 54px;
+      background: var(--gold);
+    }
+
+    .bar-gallery {
+      padding: 108px 0;
+      background: #000;
+      overflow: hidden;
+    }
+
+    .bar-slider {
+      width: 100%;
+      height: 85vh;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .bar-slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: slowZoom 6s ease infinite;
+    }
+
+    @keyframes slowZoom {
+      0% { transform: scale(1); opacity: .85; }
+      15% { opacity: 1; }
+      100% { transform: scale(1.05); opacity: 1; }
+    }
+
+    .contact {
+      padding: 96px 0;
+      background: #070504;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      color: #d7cbc2;
+      font-size: 1.08rem;
+      line-height: 1.55;
+    }
+
+    iframe {
+      width: 100%;
+      height: 420px;
+      border: 0;
+      border-radius: 8px;
+      filter: grayscale(.25) contrast(1.05);
+    }
+
+    footer {
+      padding: 28px 16px;
+      text-align: center;
+      color: #92857b;
+      border-top: 1px solid var(--line);
+      background: #030202;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 880px) {
+      .header-inner { height: auto; padding: 10px 0; }
+      .main-nav { display: none; }
+      .btn { min-height: 42px; padding: 0 13px; font-size: .72rem; }
+      .logo-frame { width: min(250px, 56vw); height: 60px; }
+      .hero { min-height: 88vh; }
+      .menu-head, .category, .contact-grid { grid-template-columns: 1fr; }
+      .menu-head { align-items: start; }
+      .category { min-height: 0; }
+      .category:nth-of-type(even) .category-copy { order: 2; }
+      .category:nth-of-type(even) .category-media { order: 1; }
+      .category-media { order: -1; min-height: 330px; }
+      .category-copy { min-height: 380px; }
+      .bar-slider { height: 60vh; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#home" class="logo-frame" aria-label="Lounge 37 home">
+        <img src="assets/logo/ChatGPT%20Image%20Jun%209,%202026,%2004_58_32%20PM.png" class="logo-art" alt="Lounge 37 Steakhouse and Burger Bar" />
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#menu">Menu</a>
+        <a href="#bar-gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn" href="https://tableagent.com/riga/lounge-37/" target="_blank" rel="noopener noreferrer">Reserve</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero" aria-label="Lounge 37">
+      <div class="hero-media" data-slider="hero">
+        <img class="hero-slide is-active" src="assets/Ambience/R6II1285.jpg" alt="" />
+        <img class="hero-slide" src="assets/Ambience/R6II1294.jpg" alt="" />
+        <img class="hero-slide" src="assets/Ambience/R6II1334.jpg" alt="" />
+        <img class="hero-slide" src="assets/Ambience/R6II1397.jpg" alt="" />
+        <img class="hero-slide" src="assets/Ambience/R6II1453.jpg" alt="" />
+        <img class="hero-slide" src="assets/Ambience/R6II1496.jpg" alt="" />
+        <img class="hero-slide" src="assets/Ambience/R6II1561.jpg" alt="" />
+        <img class="hero-slide" src="assets/Ambience/R6II1762.jpg" alt="" />
+      </div>
+    </section>
+
+    <div class="strip" aria-hidden="true">
+      <div class="marquee">
+        <span>Steakhouse & Burger Bar</span><span>Original Lounge 37 Ambience</span><span>Steaks</span><span>Burgers</span><span>Starters</span><span>Desserts</span><span>Lounge 37 Bar</span>
+        <span>Steakhouse & Burger Bar</span><span>Original Lounge 37 Ambience</span><span>Steaks</span><span>Burgers</span><span>Starters</span><span>Desserts</span><span>Lounge 37 Bar</span>
+      </div>
+    </div>
+
+    <section id="menu" class="menu">
+      <div class="wrap">
+        <div class="menu-head">
+          <h2 class="luxury section-title">Menu</h2>
+        </div>
+
+        <article class="category" data-category='[
+          {"name":"Argentinian Black Angus Ribeye","ingredients":"Premium black angus ribeye, flame grilled and served with Lounge 37 steak seasoning.","image":"assets/menu/Steaks/R6II3355.jpg"},
+          {"name":"Fillet Mignon Argentinian Black Angus","ingredients":"Tender black angus fillet with chimichurri, bourbon, demi-glace, or pepper sauce.","image":"assets/menu/Steaks/R6II3717.jpg"},
+          {"name":"T-Bone Steak","ingredients":"Fire-grilled T-bone steak with grilled vegetables and house sauce.","image":"assets/menu/Steaks/R6II3760.jpg"},
+          {"name":"Chef Steak Special","ingredients":"A rich steakhouse plate with seared beef, herbs, sauce, and warm Lounge 37 styling.","image":"assets/ChatGPT%20Image%20Jun%209,%202026,%2004_58_32%20PM.png"}
+        ]'>
+          <div class="category-copy">
+            <p class="category-title">Steaks</p>
+            <h3 class="luxury dish-name">Argentinian Black Angus Ribeye</h3>
+            <p class="dish-ingredients">Premium black angus ribeye, flame grilled and served with Lounge 37 steak seasoning.</p>
+            <div class="dots" aria-hidden="true"></div>
+          </div>
+          <div class="category-media">
+            <img class="dish-photo is-active" src="assets/menu/Steaks/R6II3355.jpg" alt="Argentinian Black Angus Ribeye" />
+            <img class="dish-photo" src="assets/menu/Steaks/R6II3717.jpg" alt="Fillet Mignon Argentinian Black Angus" />
+            <img class="dish-photo" src="assets/menu/Steaks/R6II3760.jpg" alt="T-Bone Steak" />
+            <img class="dish-photo" src="assets/ChatGPT%20Image%20Jun%209,%202026,%2004_58_32%20PM.png" alt="Chef Steak Special" />
+          </div>
+        </article>
+
+        <article class="category" data-category='[
+          {"name":"Lounge Classic Burger","ingredients":"Beef patty, cheese, fresh salad, house sauce, French fries, saffron aioli.","image":"assets/menu/Burgers/R6II3521.jpg"},
+          {"name":"Bacon Cheese Burger","ingredients":"Beef patty, crispy bacon, cheddar, pickles, burger sauce, French fries.","image":"assets/menu/Burgers/R6II3584.jpg"},
+          {"name":"Truffle Burger","ingredients":"Beef patty, truffle sauce, cheese, caramelized onion, French fries.","image":"assets/menu/Burgers/R6II3601.jpg"},
+          {"name":"Chef Burger Special","ingredients":"A gourmet burger with melted cheese, pickles, house sauce, and crisp fries.","image":"assets/menu/Burgers/R6II3613.jpg"}
+        ]'>
+          <div class="category-copy">
+            <p class="category-title">Burgers</p>
+            <h3 class="luxury dish-name">Lounge Classic Burger</h3>
+            <p class="dish-ingredients">Beef patty, cheese, fresh salad, house sauce, French fries, saffron aioli.</p>
+            <div class="dots" aria-hidden="true"></div>
+          </div>
+          <div class="category-media">
+            <img class="dish-photo is-active" src="assets/menu/Burgers/R6II3521.jpg" alt="Lounge Classic Burger" />
+            <img class="dish-photo" src="assets/menu/Burgers/R6II3584.jpg" alt="Bacon Cheese Burger" />
+            <img class="dish-photo" src="assets/menu/Burgers/R6II3601.jpg" alt="Truffle Burger" />
+            <img class="dish-photo" src="assets/menu/Burgers/R6II3613.jpg" alt="Chef Burger Special" />
+          </div>
+        </article>
+
+        <article class="category" data-category='[
+          {"name":"Beef Tartare","ingredients":"Fresh beef tartare, seasoning, herbs, crispy bread.","image":"assets/menu/Starters/R6II3238.jpg"},
+          {"name":"Beef Carpaccio","ingredients":"Thin sliced beef, parmesan, rocket, olive oil, citrus dressing.","image":"assets/menu/Starters/R6II3294.jpg"},
+          {"name":"Cheese Board","ingredients":"Selection of cheeses with fruits, nuts, and house pairing.","image":"assets/menu/Starters/R6II3333.jpg"}
+        ]'>
+          <div class="category-copy">
+            <p class="category-title">Starters</p>
+            <h3 class="luxury dish-name">Beef Tartare</h3>
+            <p class="dish-ingredients">Fresh beef tartare, seasoning, herbs, crispy bread.</p>
+            <div class="dots" aria-hidden="true"></div>
+          </div>
+          <div class="category-media">
+            <img class="dish-photo is-active" src="assets/menu/Starters/R6II3238.jpg" alt="Beef Tartare" />
+            <img class="dish-photo" src="assets/menu/Starters/R6II3294.jpg" alt="Beef Carpaccio" />
+            <img class="dish-photo" src="assets/menu/Starters/R6II3333.jpg" alt="Cheese Board" />
+          </div>
+        </article>
+
+        <article class="category" data-category='[
+          {"name":"New York Cheesecake","ingredients":"Classic cheesecake with smooth cream texture and berry garnish.","image":"assets/menu/dessert/R6II3419.jpg"},
+          {"name":"Chocolate Biscuit","ingredients":"Rich chocolate dessert with biscuit base and soft cream finish.","image":"assets/menu/dessert/R6II3454.jpg"},
+          {"name":"Sorbet","ingredients":"Refreshing fruit sorbet served chilled.","image":"assets/menu/dessert/R6II3486.jpg"}
+        ]'>
+          <div class="category-copy">
+            <p class="category-title">Desserts</p>
+            <h3 class="luxury dish-name">New York Cheesecake</h3>
+            <p class="dish-ingredients">Classic cheesecake with smooth cream texture and berry garnish.</p>
+            <div class="dots" aria-hidden="true"></div>
+          </div>
+          <div class="category-media">
+            <img class="dish-photo is-active" src="assets/menu/dessert/R6II3419.jpg" alt="New York Cheesecake" />
+            <img class="dish-photo" src="assets/menu/dessert/R6II3454.jpg" alt="Chocolate Biscuit" />
+            <img class="dish-photo" src="assets/menu/dessert/R6II3486.jpg" alt="Sorbet" />
+          </div>
+        </article>
 
         <article class="category" data-category='[
           {"name":"Signature Cocktails","ingredients":"Fresh citrus, premium spirits, cold foam, fruit garnish and Lounge 37 bar finish.","image":"assets/menu/Drinks/R6II4140.jpg"},
