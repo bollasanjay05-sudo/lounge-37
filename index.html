@@ -18,7 +18,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -308,14 +307,10 @@
     .bar-slider img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      animation: slowZoom 6s ease infinite;
-    }
-
-    @keyframes slowZoom {
-      0% { transform: scale(1); opacity: .85; }
-      15% { opacity: 1; }
-      100% { transform: scale(1.05); opacity: 1; }
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      background: #000;
     }
 
     .contact {
@@ -371,14 +366,6 @@
       .category-copy { min-height: 380px; }
       .bar-slider { height: 60vh; }
     }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-      }
-    }
   </style>
 </head>
 <body>
@@ -427,7 +414,8 @@
           {"name":"Argentinian Black Angus Ribeye","ingredients":"Premium black angus ribeye, flame grilled and served with Lounge 37 steak seasoning.","image":"assets/menu/Steaks/R6II3355.jpg"},
           {"name":"Fillet Mignon Argentinian Black Angus","ingredients":"Tender black angus fillet with chimichurri, bourbon, demi-glace, or pepper sauce.","image":"assets/menu/Steaks/R6II3717.jpg"},
           {"name":"T-Bone Steak","ingredients":"Fire-grilled T-bone steak with grilled vegetables and house sauce.","image":"assets/menu/Steaks/R6II3760.jpg"},
-          {"name":"Chef Steak Special","ingredients":"A rich steakhouse plate with seared beef, herbs, sauce, and warm Lounge 37 styling.","image":"assets/ChatGPT%20Image%20Jun%209,%202026,%2004_58_32%20PM.png"}
+          {"name":"Chef Steak Special","ingredients":"Seared steakhouse cut with herbs, sauce and warm Lounge 37 styling.","image":"assets/menu/Steaks/R6II3812.jpg"},
+          {"name":"Grilled Steak Plate","ingredients":"Juicy grilled steak with rich house sauce and steakhouse garnish.","image":"assets/menu/Steaks/R6II3830.jpg"}
         ]'>
           <div class="category-copy">
             <p class="category-title">Steaks</p>
@@ -439,7 +427,8 @@
             <img class="dish-photo is-active" src="assets/menu/Steaks/R6II3355.jpg" alt="Argentinian Black Angus Ribeye" />
             <img class="dish-photo" src="assets/menu/Steaks/R6II3717.jpg" alt="Fillet Mignon Argentinian Black Angus" />
             <img class="dish-photo" src="assets/menu/Steaks/R6II3760.jpg" alt="T-Bone Steak" />
-            <img class="dish-photo" src="assets/ChatGPT%20Image%20Jun%209,%202026,%2004_58_32%20PM.png" alt="Chef Steak Special" />
+            <img class="dish-photo" src="assets/menu/Steaks/R6II3812.jpg" alt="Chef Steak Special" />
+            <img class="dish-photo" src="assets/menu/Steaks/R6II3830.jpg" alt="Grilled Steak Plate" />
           </div>
         </article>
 
@@ -565,6 +554,7 @@
     }
 
     document.querySelectorAll('[data-slider="hero"]').forEach(slider => rotateSlides(slider, '.hero-slide', 3800));
+
     const barImages = [
       'assets/Bar/Foto-10.jpg',
       'assets/Bar/Foto-11.jpg',
@@ -593,7 +583,7 @@
       'assets/Bar/Foto-70.jpg',
       'assets/Bar/Foto-72.jpg',
       'assets/Bar/Foto-73.jpg',
-      'assets/Bar/R6II4061.jpg',
+      'assets/Bar/R6II4061.jpg'
     ];
 
     function startBarGallery() {
