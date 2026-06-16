@@ -135,9 +135,12 @@
 
     .hero-slide {
       object-fit: cover;
+      object-position: center;
       opacity: 0;
       transform: scale(1.02);
-      transition: opacity 900ms ease, transform 5200ms ease;
+      transition: opacity 700ms ease, transform 5200ms ease;
+      will-change: opacity, transform;
+      backface-visibility: hidden;
     }
 
     .hero-slide.is-active {
@@ -257,6 +260,8 @@
       opacity: 0;
       transform: scale(1.01);
       transition: opacity 800ms ease, transform 5200ms ease;
+      will-change: opacity, transform;
+      backface-visibility: hidden;
     }
 
     .dish-photo.is-active {
@@ -302,15 +307,39 @@
       height: 85vh;
       overflow: hidden;
       background: #000;
+      position: relative;
     }
 
     .bar-slider img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       object-position: center;
       display: block;
       background: #000;
+      opacity: 0;
+      transform: scale(1.01);
+      transition: opacity 650ms ease, transform 5200ms ease;
+      will-change: opacity, transform;
+      backface-visibility: hidden;
+    }
+
+    .bar-slider img.is-active {
+      opacity: 1;
+      transform: scale(1.04);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .marquee { animation: none; }
+      .hero-slide,
+      .dish-photo,
+      .bar-slider img {
+        transition: opacity 220ms ease;
+        transform: none !important;
+      }
     }
 
     .contact {
@@ -386,42 +415,8 @@
   <main>
     <section id="home" class="hero" aria-label="Lounge 37">
       <div class="hero-media" data-slider="hero">
-        <img class="hero-slide is-active" src="assets/Ambience/Foto-10.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/Foto-11.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/Foto-12.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/Foto-16.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/Foto-21.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/Foto-22.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/Foto-23.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/Foto-24.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/Foto-25.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/Foto-26.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/Foto-29.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/Foto-30.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1285.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1286.jpg" alt="" />
+        <img class="hero-slide is-active" src="assets/Ambience/R6II1285.jpg" alt="" />
         <img class="hero-slide" src="assets/Ambience/R6II1294.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1296.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1305.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1317.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1322.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1330.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1453.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1460.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1478.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1490.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1496.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1516.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1527.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1536.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1561.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1566.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1640.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1715.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1734.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1762.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1776.jpg" alt="" />
-        <img class="hero-slide" src="assets/Ambience/R6II1790.jpg" alt="" />
       </div>
     </section>
 
@@ -486,7 +481,7 @@
 
         <article class="category" data-category='[
           {"name":"Smoked Salmon","ingredients":"Lemon infused oil / chili / quail eggs","image":"assets/menu/Starters/R6II3238.jpg"},
-          {"name":"Beef Tartare","ingredients":"Potato espuma / prosciutto crumble","image":"assets/menu/Starters/R6II3267.jpg"},
+          {"name":"Beef Tartare","ingredients":"Potato espuma / prosciutto crumble","image":"assets/menu/Starters/R6II3294.jpg"},
           {"name":"Sweet Onion","ingredients":"Eggplant miso pure / goat cheese espuma / basil oil","image":"assets/menu/Starters/R6II3305.jpg"},
           {"name":"Beef Carpaccio","ingredients":"Arugula / parmesan / truffle oil","image":"assets/menu/Starters/R6II3272.jpg"},
           {"name":"Cheese Board","ingredients":"Taleggio / gorgonzola / camembert / manchego / fig jam / berries / grissini","image":"assets/menu/Starters/R6II3333.jpg"}
@@ -499,7 +494,7 @@
           </div>
           <div class="category-media">
             <img class="dish-photo is-active" src="assets/menu/Starters/R6II3238.jpg" alt="Smoked Salmon" />
-            <img class="dish-photo" src="assets/menu/Starters/R6II3267.jpg" alt="Beef Tartare" />
+            <img class="dish-photo" src="assets/menu/Starters/R6II3294.jpg" alt="Beef Tartare" />
             <img class="dish-photo" src="assets/menu/Starters/R6II3305.jpg" alt="Sweet Onion" />
             <img class="dish-photo" src="assets/menu/Starters/R6II3272.jpg" alt="Beef Carpaccio" />
             <img class="dish-photo" src="assets/menu/Starters/R6II3333.jpg" alt="Cheese Board" />
@@ -579,18 +574,44 @@
   <footer>2026 Lounge 37 - Steakhouse & Burger Bar - Riga</footer>
 
   <script>
-    function rotateSlides(container, selector, delay) {
-      const slides = Array.from(container.querySelectorAll(selector));
-      if (slides.length < 2) return;
-      let index = 0;
-      setInterval(() => {
-        slides[index].classList.remove('is-active');
-        index = (index + 1) % slides.length;
-        slides[index].classList.add('is-active');
-      }, delay);
-    }
-
-    document.querySelectorAll('[data-slider="hero"]').forEach(slider => rotateSlides(slider, '.hero-slide', 3800));
+    const ambienceImages = [
+      'assets/Ambience/Foto-10.jpg',
+      'assets/Ambience/Foto-11.jpg',
+      'assets/Ambience/Foto-12.jpg',
+      'assets/Ambience/Foto-16.jpg',
+      'assets/Ambience/Foto-21.jpg',
+      'assets/Ambience/Foto-22.jpg',
+      'assets/Ambience/Foto-23.jpg',
+      'assets/Ambience/Foto-24.jpg',
+      'assets/Ambience/Foto-25.jpg',
+      'assets/Ambience/Foto-26.jpg',
+      'assets/Ambience/Foto-29.jpg',
+      'assets/Ambience/Foto-30.jpg',
+      'assets/Ambience/R6II1285.jpg',
+      'assets/Ambience/R6II1286.jpg',
+      'assets/Ambience/R6II1294.jpg',
+      'assets/Ambience/R6II1296.jpg',
+      'assets/Ambience/R6II1305.jpg',
+      'assets/Ambience/R6II1317.jpg',
+      'assets/Ambience/R6II1322.jpg',
+      'assets/Ambience/R6II1330.jpg',
+      'assets/Ambience/R6II1453.jpg',
+      'assets/Ambience/R6II1460.jpg',
+      'assets/Ambience/R6II1478.jpg',
+      'assets/Ambience/R6II1490.jpg',
+      'assets/Ambience/R6II1496.jpg',
+      'assets/Ambience/R6II1516.jpg',
+      'assets/Ambience/R6II1527.jpg',
+      'assets/Ambience/R6II1536.jpg',
+      'assets/Ambience/R6II1561.jpg',
+      'assets/Ambience/R6II1566.jpg',
+      'assets/Ambience/R6II1640.jpg',
+      'assets/Ambience/R6II1715.jpg',
+      'assets/Ambience/R6II1734.jpg',
+      'assets/Ambience/R6II1762.jpg',
+      'assets/Ambience/R6II1776.jpg',
+      'assets/Ambience/R6II1790.jpg'
+    ];
 
     const barImages = [
       'assets/Bar/Foto-10.jpg',
@@ -619,21 +640,98 @@
       'assets/Bar/R6II1460.jpg'
     ];
 
-    function startBarGallery() {
-      const img = document.getElementById('barSliderImage');
-      if (!img) return;
-      let index = 0;
-
-      function showBarImage() {
-        img.src = barImages[index];
-        index = (index + 1) % barImages.length;
-      }
-
-      showBarImage();
-      setInterval(showBarImage, 5000);
+    function preloadImage(src) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.decoding = 'async';
+        img.onload = () => {
+          if (img.decode) {
+            img.decode().catch(() => {}).finally(() => resolve(src));
+          } else {
+            resolve(src);
+          }
+        };
+        img.onerror = reject;
+        img.src = src;
+      });
     }
 
-    startBarGallery();
+    function startSmoothSlider(container, images, delay) {
+      if (!container || images.length === 0) return;
+
+      const slots = Array.from(container.querySelectorAll('img'));
+      const first = slots[0] || document.createElement('img');
+      const second = slots[1] || document.createElement('img');
+
+      first.className = first.className || 'hero-slide is-active';
+      second.className = second.className || 'hero-slide';
+      if (!first.parentNode) container.appendChild(first);
+      if (!second.parentNode) container.appendChild(second);
+
+      Array.from(container.querySelectorAll('img')).slice(2).forEach(img => img.remove());
+
+      let activeSlot = 0;
+      let activeIndex = -1;
+      let timer = 0;
+      const failed = new Set();
+      const imgSlots = [first, second];
+
+      async function nextImage(startAt) {
+        for (let offset = 0; offset < images.length; offset++) {
+          const index = (startAt + offset) % images.length;
+          const src = images[index];
+          if (failed.has(src)) continue;
+          try {
+            await preloadImage(src);
+            return { index, src };
+          } catch {
+            failed.add(src);
+          }
+        }
+        return null;
+      }
+
+      function warmNextImages(fromIndex) {
+        [1, 2].forEach(step => {
+          const src = images[(fromIndex + step) % images.length];
+          if (!failed.has(src)) preloadImage(src).catch(() => failed.add(src));
+        });
+      }
+
+      async function showNext() {
+        const result = await nextImage(activeIndex + 1);
+        if (!result) return;
+
+        const nextSlot = activeSlot === 0 ? 1 : 0;
+        const incoming = imgSlots[nextSlot];
+        const outgoing = imgSlots[activeSlot];
+
+        incoming.src = result.src;
+        incoming.classList.add('is-active');
+        outgoing.classList.remove('is-active');
+        activeSlot = nextSlot;
+        activeIndex = result.index;
+        warmNextImages(activeIndex);
+
+        clearTimeout(timer);
+        timer = window.setTimeout(showNext, delay);
+      }
+
+      showNext();
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) clearTimeout(timer);
+        else {
+          clearTimeout(timer);
+          timer = window.setTimeout(showNext, 500);
+        }
+      });
+    }
+
+    document.querySelectorAll('[data-slider="hero"]').forEach(slider => {
+      startSmoothSlider(slider, ambienceImages, 3600);
+    });
+
+    startSmoothSlider(document.querySelector('.bar-slider'), barImages, 3600);
 
     document.querySelectorAll('.category').forEach((category, categoryIndex) => {
       const dishes = JSON.parse(category.dataset.category);
@@ -642,6 +740,8 @@
       const photos = Array.from(category.querySelectorAll('.dish-photo'));
       const dots = category.querySelector('.dots');
       let active = 0;
+      let timer = 0;
+      let isVisible = false;
 
       dots.innerHTML = dishes.map((_, index) => `<span class="dot ${index === 0 ? 'is-active' : ''}"></span>`).join('');
       const dotEls = Array.from(dots.querySelectorAll('.dot'));
@@ -656,7 +756,39 @@
         dotEls[active]?.classList.add('is-active');
       }
 
-      setInterval(() => showDish((active + 1) % dishes.length), 4300 + categoryIndex * 350);
+      function tick() {
+        if (!isVisible || document.hidden) return;
+        showDish((active + 1) % dishes.length);
+        timer = window.setTimeout(tick, 4300 + categoryIndex * 350);
+      }
+
+      function start() {
+        if (timer || document.hidden) return;
+        timer = window.setTimeout(tick, 4300 + categoryIndex * 350);
+      }
+
+      function stop() {
+        clearTimeout(timer);
+        timer = 0;
+      }
+
+      if (!('IntersectionObserver' in window)) {
+        isVisible = true;
+        start();
+        return;
+      }
+
+      const observer = new IntersectionObserver(entries => {
+        isVisible = entries.some(entry => entry.isIntersecting);
+        if (isVisible) start();
+        else stop();
+      }, { rootMargin: '180px 0px' });
+
+      observer.observe(category);
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stop();
+        else if (isVisible) start();
+      });
     });
   </script>
 </body>
