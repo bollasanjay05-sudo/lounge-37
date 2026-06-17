@@ -363,6 +363,56 @@
       line-height: 1.55;
     }
 
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .social-heading {
+      margin: 28px 0 0;
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 48px;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 8px;
+      padding: 0 14px 0 10px;
+      background: rgba(255, 255, 255, .055);
+      color: #f8efe7;
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+    }
+
+    .social-link:hover {
+      border-color: rgba(205, 127, 50, .7);
+      background: rgba(205, 127, 50, .12);
+      transform: translateY(-1px);
+    }
+
+    .social-logo {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      flex: 0 0 auto;
+      background: #fff;
+      object-fit: contain;
+      object-position: center;
+      padding: 4px;
+    }
+
     iframe {
       width: 100%;
       height: 420px;
@@ -435,8 +485,8 @@
 
         <article class="category" data-category='[
           {"name":"New Zeeland Lamb Chops","ingredients":"300 g","image":"assets/menu/Steaks/R6II3874.jpg"},
-          {"name":"Argentinian Black Angus Ribeye","ingredients":"250 g / 350 g / 500 g","image":"assets/menu/Steaks/R6II3760.jpg"},
-          {"name":"Fillet Mignon Argentinian Black Angus","ingredients":"200 g / 300 g","image":"assets/menu/Steaks/R6II3717.jpg"},
+          {"name":"Argentinian Black Angus Ribeye","ingredients":"250 g / 350 g / 500 g","image":"assets/menu/Steaks/R6II3717.jpg"},
+          {"name":"Fillet Mignon Argentinian Black Angus","ingredients":"200 g / 300 g","image":"assets/menu/Steaks/R6II3760.jpg"},
           {"name":"Gambas Prawns On The Grill","ingredients":"300 g","image":"assets/menu/Steaks/R6II3963.jpg"},
           {"name":"Argentinian Striploin","ingredients":"250 g / 350 g / 500 g","image":"assets/menu/Steaks/R6II3812.jpg"}
         ]'>
@@ -448,8 +498,8 @@
           </div>
           <div class="category-media">
             <img class="dish-photo is-active" src="assets/menu/Steaks/R6II3874.jpg" alt="New Zeeland Lamb Chops" />
-            <img class="dish-photo" src="assets/menu/Steaks/R6II3760.jpg" alt="Argentinian Black Angus Ribeye" />
-            <img class="dish-photo" src="assets/menu/Steaks/R6II3717.jpg" alt="Fillet Mignon Argentinian Black Angus" />
+            <img class="dish-photo" src="assets/menu/Steaks/R6II3717.jpg" alt="Argentinian Black Angus Ribeye" />
+            <img class="dish-photo" src="assets/menu/Steaks/R6II3760.jpg" alt="Fillet Mignon Argentinian Black Angus" />
             <img class="dish-photo" src="assets/menu/Steaks/R6II3963.jpg" alt="Gambas Prawns On The Grill" />
             <img class="dish-photo" src="assets/menu/Steaks/R6II3812.jpg" alt="Argentinian Striploin" />
           </div>
@@ -461,7 +511,7 @@
           {"name":"Lounge Classic","ingredients":"Brioche bun / fresh salad / meat patty / tomato / cheddar cheese / saffron aioli","image":"assets/menu/Burgers/R6II3601.jpg"},
           {"name":"Bacon Cheese Burger","ingredients":"Brioche bun / meat patty / fresh salad / red onion jam / crispy bacon / cheddar","image":"assets/menu/Burgers/R6II3613.jpg"},
           {"name":"Veggie Burger","ingredients":"Brioche bun / red onion jam / coleslaw salad / cheddar / avocado patty / saffron aioli","image":"assets/menu/Burgers/R6II3646.jpg"},
-          {"name":"Cheese Burger","ingredients":"Brioche bun / meat patty / cheddar / fresh salad / saffron aioli","image":"assets/menu/Burgers/R6II3675.jpg"}
+          {"name":"Crispy Chicken Burger","ingredients":"Brioche bun / fresh salad / crispy chicken / pickle sauce","image":"assets/menu/Burgers/R6II3675.jpg"}
         ]'>
           <div class="category-copy">
             <p class="category-title">Burgers</p>
@@ -475,15 +525,16 @@
             <img class="dish-photo" src="assets/menu/Burgers/R6II3601.jpg" alt="Lounge Classic" />
             <img class="dish-photo" src="assets/menu/Burgers/R6II3613.jpg" alt="Bacon Cheese Burger" />
             <img class="dish-photo" src="assets/menu/Burgers/R6II3646.jpg" alt="Veggie Burger" />
-            <img class="dish-photo" src="assets/menu/Burgers/R6II3675.jpg" alt="Cheese Burger" />
+            <img class="dish-photo" src="assets/menu/Burgers/R6II3675.jpg" alt="Crispy Chicken Burger" />
           </div>
         </article>
 
         <article class="category" data-category='[
           {"name":"Smoked Salmon","ingredients":"Lemon infused oil / chili / quail eggs","image":"assets/menu/Starters/R6II3238.jpg"},
-          {"name":"Beef Tartare","ingredients":"Potato espuma / prosciutto crumble","image":"assets/menu/Starters/R6II3294.jpg"},
+          {"name":"Beef Tartare","ingredients":"Potato espuma / prosciutto crumble","image":"assets/menu/Starters/R6II3268.jpg"},
           {"name":"Sweet Onion","ingredients":"Eggplant miso pure / goat cheese espuma / basil oil","image":"assets/menu/Starters/R6II3305.jpg"},
           {"name":"Beef Carpaccio","ingredients":"Arugula / parmesan / truffle oil","image":"assets/menu/Starters/R6II3272.jpg"},
+          {"name":"Selection Of Meats","ingredients":"Prosciutto / fuet / coppa / basturma / olives / grissini","image":"assets/menu/Starters/R6II3294.jpg"},
           {"name":"Cheese Board","ingredients":"Taleggio / gorgonzola / camembert / manchego / fig jam / berries / grissini","image":"assets/menu/Starters/R6II3333.jpg"}
         ]'>
           <div class="category-copy">
@@ -494,9 +545,10 @@
           </div>
           <div class="category-media">
             <img class="dish-photo is-active" src="assets/menu/Starters/R6II3238.jpg" alt="Smoked Salmon" />
-            <img class="dish-photo" src="assets/menu/Starters/R6II3294.jpg" alt="Beef Tartare" />
+            <img class="dish-photo" src="assets/menu/Starters/R6II3268.jpg" alt="Beef Tartare" />
             <img class="dish-photo" src="assets/menu/Starters/R6II3305.jpg" alt="Sweet Onion" />
             <img class="dish-photo" src="assets/menu/Starters/R6II3272.jpg" alt="Beef Carpaccio" />
+            <img class="dish-photo" src="assets/menu/Starters/R6II3294.jpg" alt="Selection Of Meats" />
             <img class="dish-photo" src="assets/menu/Starters/R6II3333.jpg" alt="Cheese Board" />
           </div>
         </article>
@@ -563,6 +615,21 @@
             <span>+371 22401749</span>
             <span>burgerlounge37@gmail.com</span>
             <span>Daily 12:00 - 23:00</span>
+          </div>
+          <p class="social-heading">We are on</p>
+          <div class="social-links" aria-label="Lounge 37 links">
+            <a class="social-link" href="https://www.instagram.com/lounge37riga/" target="_blank" rel="noopener noreferrer">
+              <img class="social-logo" src="assets/logo/instagram.png" alt="" aria-hidden="true" />
+              <span>Instagram</span>
+            </a>
+            <a class="social-link" href="https://www.google.com/search?q=Lounge+37+Riga" target="_blank" rel="noopener noreferrer">
+              <img class="social-logo" src="assets/logo/google.png" alt="" aria-hidden="true" />
+              <span>Google</span>
+            </a>
+            <a class="social-link" href="https://tableagent.com/riga/lounge-37/" target="_blank" rel="noopener noreferrer">
+              <img class="social-logo" src="assets/logo/TableAgent_logo.png" alt="" aria-hidden="true" />
+              <span>TableAgent</span>
+            </a>
           </div>
           <p style="margin-top:28px"><a class="btn" href="tel:+37122401749">Call Now</a></p>
         </div>
