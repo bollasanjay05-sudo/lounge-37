@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -17,434 +18,466 @@
       --shadow: 0 24px 70px rgba(0, 0, 0, .42);
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-    body {
-      margin: 0;
-      background: var(--black);
-      color: var(--cream);
-      font-family: Inter, Arial, sans-serif;
-      overflow-x: hidden;
-    }
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--cream);
+  font-family: Inter, Arial, sans-serif;
+  overflow-x: hidden;
+}
 
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    section { scroll-margin-top: 92px; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+section { scroll-margin-top: 92px; }
 
-    .wrap {
-      width: min(1180px, calc(100% - 32px));
-      margin: 0 auto;
-    }
+.wrap {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
 
-    .luxury {
-      font-family: Georgia, "Times New Roman", serif;
-      letter-spacing: 0;
-    }
+.luxury {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0;
+}
 
-    .eyebrow {
-      color: var(--gold);
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      margin: 0 0 14px;
-    }
+.eyebrow {
+  color: var(--gold);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
 
-    .site-header {
-      position: fixed;
-      inset: 0 0 auto;
-      z-index: 50;
-      border-bottom: 1px solid rgba(255, 255, 255, .12);
-      background: rgba(7, 5, 4, .78);
-      backdrop-filter: blur(16px);
-    }
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+  background: rgba(7, 5, 4, .78);
+  backdrop-filter: blur(16px);
+}
 
-    .header-inner {
-      height: 96px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
+.header-inner {
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
 
-    .logo-frame {
-      width: clamp(260px, 30vw, 420px);
-      height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background: transparent;
-      border: 0;
-      border-radius: 0;
-      padding: 0;
-    }
+.logo-frame {
+  width: clamp(260px, 30vw, 420px);
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+}
 
-    .logo-art {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
-      padding: 0;
-    }
+.logo-art {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: 0;
+}
 
-    .main-nav {
-      display: flex;
-      align-items: center;
-      gap: clamp(14px, 2.5vw, 32px);
-      color: #ddd4cb;
-      font-size: .76rem;
-      font-weight: 800;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.5vw, 32px);
+  color: #ddd4cb;
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
 
-    .main-nav a:hover { color: var(--gold); }
+.main-nav a:hover { color: var(--gold); }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      border-radius: 6px;
-      padding: 0 18px;
-      border: 1px solid rgba(205, 127, 50, .85);
-      background: var(--gold);
-      color: #0c0705;
-      font-size: .82rem;
-      font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  border-radius: 6px;
+  padding: 0 18px;
+  border: 1px solid rgba(205, 127, 50, .85);
+  background: var(--gold);
+  color: #0c0705;
+  font-size: .82rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
 
-    .hero {
-      min-height: 88vh;
-      position: relative;
-      overflow: hidden;
-      background: #050302;
-    }
+.hero {
+  min-height: 88vh;
+  position: relative;
+  overflow: hidden;
+  background: #050302;
+}
 
-    .hero-media, .hero-slide {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-    }
+.hero-media, .hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
 
-    .hero-slide {
-      object-fit: cover;
-      object-position: center;
-      opacity: 0;
-      transform: scale(1.02);
-      transition: opacity 700ms ease, transform 5200ms ease;
-      will-change: opacity, transform;
-      backface-visibility: hidden;
-    }
+.hero-slide {
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 700ms ease, transform 5200ms ease;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
 
-    .hero-slide.is-active {
-      opacity: 1;
-      transform: scale(1.07);
-    }
+.hero-slide.is-active {
+  opacity: 1;
+  transform: scale(1.07);
+}
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(0deg, rgba(7, 5, 4, .46), rgba(7, 5, 4, .08) 48%, rgba(7, 5, 4, .36));
-    }
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(0deg, rgba(7, 5, 4, .46), rgba(7, 5, 4, .08) 48%, rgba(7, 5, 4, .36));
+}
 
-    .strip {
-      border-block: 1px solid var(--line);
-      background: #120c08;
-      overflow: hidden;
-      padding: 14px 0;
-    }
+.strip {
+  border-block: 1px solid var(--line);
+  background: #120c08;
+  overflow: hidden;
+  padding: 14px 0;
+}
 
-    .marquee {
-      width: max-content;
-      display: flex;
-      gap: 36px;
-      color: var(--gold);
-      font-size: .8rem;
-      font-weight: 900;
-      letter-spacing: .27em;
-      text-transform: uppercase;
-      animation: marquee 30s linear infinite;
-    }
+.marquee {
+  width: max-content;
+  display: flex;
+  gap: 36px;
+  color: var(--gold);
+  font-size: .8rem;
+  font-weight: 900;
+  letter-spacing: .27em;
+  text-transform: uppercase;
+  animation: marquee 30s linear infinite;
+}
 
-    @keyframes marquee {
-      to { transform: translateX(-50%); }
-    }
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
 
-    .section-title {
-      font-size: clamp(2.8rem, 7vw, 6.8rem);
-      line-height: .88;
-      margin: 0 0 24px;
-    }
+.section-title {
+  font-size: clamp(2.8rem, 7vw, 6.8rem);
+  line-height: .88;
+  margin: 0 0 24px;
+}
 
-    .menu {
-      padding: 108px 0;
-      background: #090604;
-    }
+.story {
+  padding: 92px 0 98px;
+  background:
+    linear-gradient(180deg, #120c08 0%, #090604 100%);
+  border-bottom: 1px solid var(--line);
+}
 
-    .menu-head {
-      text-align: center;
-      margin-bottom: 42px;
-    }
+.story-panel {
+  display: grid;
+  grid-template-columns: .72fr 1.28fr;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
 
-    .category {
-      display: grid;
-      grid-template-columns: .92fr 1.08fr;
-      min-height: 560px;
-      margin-top: 24px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      overflow: hidden;
-      background: var(--panel);
-      box-shadow: var(--shadow);
-    }
+.story-copy {
+  max-width: 780px;
+  color: #d7cbc2;
+  font-size: clamp(1rem, 1.5vw, 1.16rem);
+  line-height: 1.78;
+}
 
-    .category:nth-of-type(even) .category-copy { order: 2; }
-    .category:nth-of-type(even) .category-media { order: 1; }
+.story-copy p {
+  margin: 0 0 18px;
+}
 
-    .category-copy {
-      padding: clamp(28px, 5vw, 58px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-    }
+.story-copy p:last-child {
+  margin-bottom: 0;
+}
 
-    .category-title {
-      color: var(--gold);
-      font-size: clamp(2.4rem, 5vw, 5.8rem);
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 900;
-      letter-spacing: 0;
-      text-transform: uppercase;
-      margin: 0 0 28px;
-    }
+.menu {
+  padding: 108px 0;
+  background: #090604;
+}
 
-    .dish-name {
-      font-size: clamp(1.9rem, 4vw, 4.2rem);
-      line-height: .96;
-      margin: 0 0 20px;
-      max-width: 520px;
-      position: relative;
-      z-index: 1;
-    }
+.menu-head {
+  text-align: center;
+  margin-bottom: 42px;
+}
 
-    .dish-ingredients {
-      color: #d5c8be;
-      font-size: clamp(1rem, 1.5vw, 1.15rem);
-      line-height: 1.75;
-      margin: 0 0 28px;
-      max-width: 560px;
-    }
+.category {
+  display: grid;
+  grid-template-columns: .92fr 1.08fr;
+  min-height: 560px;
+  margin-top: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
 
-    .category-media {
-      position: relative;
-      min-height: 430px;
-      background: #050302;
-    }
+.category:nth-of-type(even) .category-copy { order: 2; }
+.category:nth-of-type(even) .category-media { order: 1; }
 
-    .dish-photo {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transform: scale(1.01);
-      transition: opacity 800ms ease, transform 5200ms ease;
-      will-change: opacity, transform;
-      backface-visibility: hidden;
-    }
+.category-copy {
+  padding: clamp(28px, 5vw, 58px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
 
-    .dish-photo.is-active {
-      opacity: 1;
-      transform: scale(1.06);
-    }
+.category-title {
+  color: var(--gold);
+  font-size: clamp(2.4rem, 5vw, 5.8rem);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin: 0 0 28px;
+}
 
-    .category-media::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(21, 16, 12, .18), rgba(21, 16, 12, 0));
-      pointer-events: none;
-    }
+.dish-name {
+  font-size: clamp(1.9rem, 4vw, 4.2rem);
+  line-height: .96;
+  margin: 0 0 20px;
+  max-width: 520px;
+  position: relative;
+  z-index: 1;
+}
 
-    .dots {
-      display: flex;
-      gap: 8px;
-      margin-top: 18px;
-    }
+.dish-ingredients {
+  color: #d5c8be;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.75;
+  margin: 0 0 28px;
+  max-width: 560px;
+}
 
-    .dot {
-      width: 32px;
-      height: 4px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .22);
-      transition: background 220ms ease, width 220ms ease;
-    }
+.category-media {
+  position: relative;
+  min-height: 430px;
+  background: #050302;
+}
 
-    .dot.is-active {
-      width: 54px;
-      background: var(--gold);
-    }
+.dish-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.01);
+  transition: opacity 800ms ease, transform 5200ms ease;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
 
-    .bar-gallery {
-      padding: 108px 0;
-      background: #000;
-      overflow: hidden;
-    }
+.dish-photo.is-active {
+  opacity: 1;
+  transform: scale(1.06);
+}
 
-    .bar-slider {
-      width: 100%;
-      height: 85vh;
-      overflow: hidden;
-      background: #000;
-      position: relative;
-    }
+.category-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(21, 16, 12, .18), rgba(21, 16, 12, 0));
+  pointer-events: none;
+}
 
-    .bar-slider img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      background: #000;
-      opacity: 0;
-      transform: scale(1.01);
-      transition: opacity 650ms ease, transform 5200ms ease;
-      will-change: opacity, transform;
-      backface-visibility: hidden;
-    }
+.dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
+}
 
-    .bar-slider img.is-active {
-      opacity: 1;
-      transform: scale(1.04);
-    }
+.dot {
+  width: 32px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .22);
+  transition: background 220ms ease, width 220ms ease;
+}
 
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .marquee { animation: none; }
-      .hero-slide,
-      .dish-photo,
-      .bar-slider img {
-        transition: opacity 220ms ease;
-        transform: none !important;
-      }
-    }
+.dot.is-active {
+  width: 54px;
+  background: var(--gold);
+}
 
-    .contact {
-      padding: 96px 0;
-      background: #070504;
-      border-top: 1px solid var(--line);
-    }
+.bar-gallery {
+  padding: 108px 0;
+  background: #000;
+  overflow: hidden;
+}
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 34px;
-      align-items: center;
-    }
+.bar-slider {
+  width: 100%;
+  height: 85vh;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+}
 
-    .contact-list {
-      display: grid;
-      gap: 12px;
-      color: #d7cbc2;
-      font-size: 1.08rem;
-      line-height: 1.55;
-    }
+.bar-slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: #000;
+  opacity: 0;
+  transform: scale(1.01);
+  transition: opacity 650ms ease, transform 5200ms ease;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+}
 
-    .social-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 10px;
-    }
+.bar-slider img.is-active {
+  opacity: 1;
+  transform: scale(1.04);
+}
 
-    .social-heading {
-      margin: 28px 0 0;
-      color: var(--gold);
-      font-size: .78rem;
-      font-weight: 900;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee { animation: none; }
+  .hero-slide,
+  .dish-photo,
+  .bar-slider img {
+    transition: opacity 220ms ease;
+    transform: none !important;
+  }
+}
 
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      min-height: 48px;
-      border: 1px solid rgba(255, 255, 255, .14);
-      border-radius: 8px;
-      padding: 0 14px 0 10px;
-      background: rgba(255, 255, 255, .055);
-      color: #f8efe7;
-      font-size: .78rem;
-      font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
-    }
+.contact {
+  padding: 96px 0;
+  background: #070504;
+  border-top: 1px solid var(--line);
+}
 
-    .social-link:hover {
-      border-color: rgba(205, 127, 50, .7);
-      background: rgba(205, 127, 50, .12);
-      transform: translateY(-1px);
-    }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px;
+  align-items: center;
+}
 
-    .social-logo {
-      width: 30px;
-      height: 30px;
-      border-radius: 7px;
-      flex: 0 0 auto;
-      background: #fff;
-      object-fit: contain;
-      object-position: center;
-      padding: 4px;
-    }
+.contact-list {
+  display: grid;
+  gap: 12px;
+  color: #d7cbc2;
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
 
-    iframe {
-      width: 100%;
-      height: 420px;
-      border: 0;
-      border-radius: 8px;
-      filter: grayscale(.25) contrast(1.05);
-    }
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
 
-    footer {
-      padding: 28px 16px;
-      text-align: center;
-      color: #92857b;
-      border-top: 1px solid var(--line);
-      background: #030202;
-      font-size: .9rem;
-    }
+.social-heading {
+  margin: 28px 0 0;
+  color: var(--gold);
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
 
-    @media (max-width: 880px) {
-      .header-inner { height: auto; padding: 10px 0; }
-      .main-nav { display: none; }
-      .btn { min-height: 42px; padding: 0 13px; font-size: .72rem; }
-      .logo-frame { width: min(250px, 56vw); height: 60px; }
-      .hero { min-height: 88vh; }
-      .menu-head, .category, .contact-grid { grid-template-columns: 1fr; }
-      .menu-head { align-items: start; }
-      .category { min-height: 0; }
-      .category:nth-of-type(even) .category-copy { order: 2; }
-      .category:nth-of-type(even) .category-media { order: 1; }
-      .category-media { order: -1; min-height: 330px; }
-      .category-copy { min-height: 380px; }
-      .bar-slider { height: 60vh; }
-    }
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 8px;
+  padding: 0 14px 0 10px;
+  background: rgba(255, 255, 255, .055);
+  color: #f8efe7;
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.social-link:hover {
+  border-color: rgba(205, 127, 50, .7);
+  background: rgba(205, 127, 50, .12);
+  transform: translateY(-1px);
+}
+
+.social-logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  flex: 0 0 auto;
+  background: #fff;
+  object-fit: contain;
+  object-position: center;
+  padding: 4px;
+}
+
+iframe {
+  width: 100%;
+  height: 420px;
+  border: 0;
+  border-radius: 8px;
+  filter: grayscale(.25) contrast(1.05);
+}
+
+footer {
+  padding: 28px 16px;
+  text-align: center;
+  color: #92857b;
+  border-top: 1px solid var(--line);
+  background: #030202;
+  font-size: .9rem;
+}
+
+@media (max-width: 880px) {
+  .header-inner { height: auto; padding: 10px 0; }
+  .main-nav { display: none; }
+  .btn { min-height: 42px; padding: 0 13px; font-size: .72rem; }
+  .logo-frame { width: min(250px, 56vw); height: 60px; }
+  .hero { min-height: 88vh; }
+  .story { padding: 70px 0; }
+  .story-panel { grid-template-columns: 1fr; }
+  .menu-head, .category, .contact-grid { grid-template-columns: 1fr; }
+  .menu-head { align-items: start; }
+  .category { min-height: 0; }
+  .category:nth-of-type(even) .category-copy { order: 2; }
+  .category:nth-of-type(even) .category-media { order: 1; }
+  .category-media { order: -1; min-height: 330px; }
+  .category-copy { min-height: 380px; }
+  .bar-slider { height: 60vh; }
+}
+
   </style>
 </head>
 <body>
@@ -470,174 +503,201 @@
       </div>
     </section>
 
-    <div class="strip" aria-hidden="true">
-      <div class="marquee">
-        <span>Steakhouse & Burger Bar</span><span>Original Lounge 37 Ambience</span><span>Steaks</span><span>Burgers</span><span>Starters</span><span>Desserts</span><span>Lounge 37 Bar</span>
-        <span>Steakhouse & Burger Bar</span><span>Original Lounge 37 Ambience</span><span>Steaks</span><span>Burgers</span><span>Starters</span><span>Desserts</span><span>Lounge 37 Bar</span>
-      </div>
+<div class="strip" aria-hidden="true">
+  <div class="marquee">
+    <span>Steakhouse & Burger Bar</span><span>Original Lounge 37 Ambience</span><span>Steaks</span><span>Burgers</span><span>Starters</span><span>Desserts</span><span>Lounge 37 Bar</span>
+    <span>Steakhouse & Burger Bar</span><span>Original Lounge 37 Ambience</span><span>Steaks</span><span>Burgers</span><span>Starters</span><span>Desserts</span><span>Lounge 37 Bar</span>
+  </div>
+</div>
+
+<section id="story" class="story">
+  <div class="wrap story-panel">
+    <div>
+      <p class="eyebrow">Our Story</p>
+      <h2 class="luxury section-title">Welcome to Lounge 37</h2>
+    </div>
+    <div class="story-copy">
+      <p>Lounge 37 Steakhouse & Burger Bar was created from a true passion for premium meat, great atmosphere, and unforgettable hospitality. Located in the heart of Riga's Old Town, in one of the city's most vibrant and iconic locations, we bring together a modern New York-inspired concept with elegant dark design, great music, stylish bar culture, an open kitchen, and an energy guests can feel from the moment they walk in.</p>
+      <p>Our philosophy is simple: no shortcuts and no compromises on quality. We work with premium Argentine Black Angus beef, carefully selected cuts known for rich flavor, tenderness, and true steakhouse character. Our burgers are made only from high-quality American beef, freshly prepared and perfectly grilled for a juicy, memorable taste in every bite.</p>
+      <p>Alongside steaks and burgers, we serve fresh fish dishes, seafood, creative starters, and plates designed to share with friends and family. The restaurant is spacious and comfortable, making it ideal for couples, groups of friends, business dinners, and larger events, with reservations available for both small and large groups.</p>
+      <p>Whether you come for an incredible steak, premium burgers, seafood, cocktails at the bar, or simply to enjoy the atmosphere, Lounge 37 Steakhouse & Burger Bar was built to deliver a modern, warm, and memorable dining experience in the heart of Old Town Riga.</p>
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="menu">
+  <div class="wrap">
+    <div class="menu-head">
+      <h2 class="luxury section-title">Menu</h2>
     </div>
 
-    <section id="menu" class="menu">
-      <div class="wrap">
-        <div class="menu-head">
-          <h2 class="luxury section-title">Menu</h2>
-        </div>
-
-        <article class="category" data-category='[
-          {"name":"New Zeeland Lamb Chops","ingredients":"300 g","image":"assets/menu/Steaks/R6II3874.jpg"},
-          {"name":"Argentinian Black Angus Ribeye","ingredients":"250 g / 350 g / 500 g","image":"assets/menu/Steaks/R6II3717.jpg"},
-          {"name":"Fillet Mignon Argentinian Black Angus","ingredients":"200 g / 300 g","image":"assets/menu/Steaks/R6II3760.jpg"},
-          {"name":"Gambas Prawns On The Grill","ingredients":"300 g","image":"assets/menu/Steaks/R6II3963.jpg"},
-          {"name":"Argentinian Striploin","ingredients":"250 g / 350 g / 500 g","image":"assets/menu/Steaks/R6II3812.jpg"}
-        ]'>
-          <div class="category-copy">
-            <p class="category-title">Steaks</p>
-            <h3 class="luxury dish-name">New Zeeland Lamb Chops</h3>
-            <p class="dish-ingredients">300 g</p>
-            <div class="dots" aria-hidden="true"></div>
-          </div>
-          <div class="category-media">
-            <img class="dish-photo is-active" src="assets/menu/Steaks/R6II3874.jpg" alt="New Zeeland Lamb Chops" />
-            <img class="dish-photo" src="assets/menu/Steaks/R6II3717.jpg" alt="Argentinian Black Angus Ribeye" />
-            <img class="dish-photo" src="assets/menu/Steaks/R6II3760.jpg" alt="Fillet Mignon Argentinian Black Angus" />
-            <img class="dish-photo" src="assets/menu/Steaks/R6II3963.jpg" alt="Gambas Prawns On The Grill" />
-            <img class="dish-photo" src="assets/menu/Steaks/R6II3812.jpg" alt="Argentinian Striploin" />
-          </div>
-        </article>
-
-        <article class="category" data-category='[
-          {"name":"Grilled Chicken Burger","ingredients":"Brioche bun / chicken / fresh salad / mango-chili chutney / saffron aioli","image":"assets/menu/Burgers/R6II3521.jpg"},
-          {"name":"Truffle Burger","ingredients":"Brioche bun / meat patty / truffle aioli / arugula / swiss cheese","image":"assets/menu/Burgers/R6II3584.jpg"},
-          {"name":"Lounge Classic","ingredients":"Brioche bun / fresh salad / meat patty / tomato / cheddar cheese / saffron aioli","image":"assets/menu/Burgers/R6II3601.jpg"},
-          {"name":"Bacon Cheese Burger","ingredients":"Brioche bun / meat patty / fresh salad / red onion jam / crispy bacon / cheddar","image":"assets/menu/Burgers/R6II3613.jpg"},
-          {"name":"Veggie Burger","ingredients":"Brioche bun / red onion jam / coleslaw salad / cheddar / avocado patty / saffron aioli","image":"assets/menu/Burgers/R6II3646.jpg"},
-          {"name":"Crispy Chicken Burger","ingredients":"Brioche bun / fresh salad / crispy chicken / pickle sauce","image":"assets/menu/Burgers/R6II3675.jpg"}
-        ]'>
-          <div class="category-copy">
-            <p class="category-title">Burgers</p>
-            <h3 class="luxury dish-name">Grilled Chicken Burger</h3>
-            <p class="dish-ingredients">Brioche bun / chicken / fresh salad / mango-chili chutney / saffron aioli</p>
-            <div class="dots" aria-hidden="true"></div>
-          </div>
-          <div class="category-media">
-            <img class="dish-photo is-active" src="assets/menu/Burgers/R6II3521.jpg" alt="Grilled Chicken Burger" />
-            <img class="dish-photo" src="assets/menu/Burgers/R6II3584.jpg" alt="Truffle Burger" />
-            <img class="dish-photo" src="assets/menu/Burgers/R6II3601.jpg" alt="Lounge Classic" />
-            <img class="dish-photo" src="assets/menu/Burgers/R6II3613.jpg" alt="Bacon Cheese Burger" />
-            <img class="dish-photo" src="assets/menu/Burgers/R6II3646.jpg" alt="Veggie Burger" />
-            <img class="dish-photo" src="assets/menu/Burgers/R6II3675.jpg" alt="Crispy Chicken Burger" />
-          </div>
-        </article>
-
-        <article class="category" data-category='[
-          {"name":"Smoked Salmon","ingredients":"Lemon infused oil / chili / quail eggs","image":"assets/menu/Starters/R6II3238.jpg"},
-          {"name":"Beef Tartare","ingredients":"Potato espuma / prosciutto crumble","image":"assets/menu/Starters/R6II3268.jpg"},
-          {"name":"Sweet Onion","ingredients":"Eggplant miso pure / goat cheese espuma / basil oil","image":"assets/menu/Starters/R6II3305.jpg"},
-          {"name":"Beef Carpaccio","ingredients":"Arugula / parmesan / truffle oil","image":"assets/menu/Starters/R6II3272.jpg"},
-          {"name":"Selection Of Meats","ingredients":"Prosciutto / fuet / coppa / basturma / olives / grissini","image":"assets/menu/Starters/R6II3294.jpg"},
-          {"name":"Cheese Board","ingredients":"Taleggio / gorgonzola / camembert / manchego / fig jam / berries / grissini","image":"assets/menu/Starters/R6II3333.jpg"}
-        ]'>
-          <div class="category-copy">
-            <p class="category-title">Starters</p>
-            <h3 class="luxury dish-name">Smoked Salmon</h3>
-            <p class="dish-ingredients">Lemon infused oil / chili / quail eggs</p>
-            <div class="dots" aria-hidden="true"></div>
-          </div>
-          <div class="category-media">
-            <img class="dish-photo is-active" src="assets/menu/Starters/R6II3238.jpg" alt="Smoked Salmon" />
-            <img class="dish-photo" src="assets/menu/Starters/R6II3268.jpg" alt="Beef Tartare" />
-            <img class="dish-photo" src="assets/menu/Starters/R6II3305.jpg" alt="Sweet Onion" />
-            <img class="dish-photo" src="assets/menu/Starters/R6II3272.jpg" alt="Beef Carpaccio" />
-            <img class="dish-photo" src="assets/menu/Starters/R6II3294.jpg" alt="Selection Of Meats" />
-            <img class="dish-photo" src="assets/menu/Starters/R6II3333.jpg" alt="Cheese Board" />
-          </div>
-        </article>
-
-        <article class="category" data-category='[
-          {"name":"Lemon - Almond Dessert","ingredients":"Citrus cream / passion fruit sauce","image":"assets/menu/dessert/R6II3454.jpg"},
-          {"name":"New York Cheesecake","ingredients":"Raspberry sauce","image":"assets/menu/dessert/R6II3486.jpg"},
-          {"name":"Chocolate Biscuit","ingredients":"Chocolate espuma / caramelized walnuts","image":"assets/menu/dessert/R6II3419.jpg"},
-          {"name":"Sorbet","ingredients":"Mango / Raspberry / Apple","image":"assets/menu/dessert/R6II4040.jpg"}
-        ]'>
-          <div class="category-copy">
-            <p class="category-title">Desserts</p>
-            <h3 class="luxury dish-name">Lemon - Almond Dessert</h3>
-            <p class="dish-ingredients">Citrus cream / passion fruit sauce</p>
-            <div class="dots" aria-hidden="true"></div>
-          </div>
-          <div class="category-media">
-            <img class="dish-photo is-active" src="assets/menu/dessert/R6II3454.jpg" alt="Lemon - Almond Dessert" />
-            <img class="dish-photo" src="assets/menu/dessert/R6II3486.jpg" alt="New York Cheesecake" />
-            <img class="dish-photo" src="assets/menu/dessert/R6II3419.jpg" alt="Chocolate Biscuit" />
-            <img class="dish-photo" src="assets/menu/dessert/R6II4040.jpg" alt="Sorbet" />
-          </div>
-        </article>
-
-        <article class="category" data-category='[
-          {"name":"Signature Cocktails","ingredients":"Fresh citrus, premium spirits, cold foam, fruit garnish and Lounge 37 bar finish.","image":"assets/menu/Drinks/R6II4140.jpg"},
-          {"name":"Signature Cocktails","ingredients":"Fresh citrus, premium spirits, cold foam, fruit garnish and Lounge 37 bar finish.","image":"assets/menu/Drinks/R6II4202.jpg"},
-          {"name":"Signature Cocktails","ingredients":"Fresh citrus, premium spirits, cold foam, fruit garnish and Lounge 37 bar finish.","image":"assets/menu/Drinks/R6II4237.jpg"},
-          {"name":"Signature Cocktails","ingredients":"Fresh citrus, premium spirits, cold foam, fruit garnish and Lounge 37 bar finish.","image":"assets/menu/Drinks/R6II4199.jpg"}
-        ]'>
-          <div class="category-copy">
-            <p class="category-title">Lounge 37 Bar</p>
-            <h3 class="luxury dish-name">Signature Cocktails</h3>
-            <p class="dish-ingredients">Fresh citrus, premium spirits, cold foam, fruit garnish and Lounge 37 bar finish.</p>
-            <div class="dots" aria-hidden="true"></div>
-          </div>
-          <div class="category-media">
-            <img class="dish-photo is-active" src="assets/menu/Drinks/R6II4140.jpg" alt="Signature Cocktails" />
-            <img class="dish-photo" src="assets/menu/Drinks/R6II4202.jpg" alt="Signature Cocktails" />
-            <img class="dish-photo" src="assets/menu/Drinks/R6II4237.jpg" alt="Signature Cocktails" />
-            <img class="dish-photo" src="assets/menu/Drinks/R6II4199.jpg" alt="Signature Cocktails" />
-          </div>
-        </article>      </div>
-    </section>
-
-    <section id="bar-gallery" class="bar-gallery">
-      <div class="wrap" style="text-align:center; margin-bottom:48px;">
-        <p class="eyebrow">Special Gallery</p>
-        <h2 class="luxury section-title">Lounge 37 Bar</h2>
+    <article class="category" data-category='[
+      {"name":"New Zeeland Lamb Chops","ingredients":"300 g","image":"assets/menu/Steaks/R6II3874.jpg"},
+      {"name":"Argentinian Black Angus Ribeye","ingredients":"250 g / 350 g / 500 g","image":"assets/menu/Steaks/R6II3717.jpg"},
+      {"name":"Fillet Mignon Argentinian Black Angus","ingredients":"200 g / 300 g","image":"assets/menu/Steaks/R6II3760.jpg"},
+      {"name":"Gambas Prawns On The Grill","ingredients":"300 g","image":"assets/menu/Steaks/R6II3963.jpg"},
+      {"name":"Argentinian Striploin","ingredients":"250 g / 350 g / 500 g","image":"assets/menu/Steaks/R6II3812.jpg"}
+    ]'>
+      <div class="category-copy">
+        <p class="category-title">Steaks</p>
+        <h3 class="luxury dish-name">New Zeeland Lamb Chops</h3>
+        <p class="dish-ingredients">300 g</p>
+        <div class="dots" aria-hidden="true"></div>
       </div>
-
-      <div class="bar-slider">
-        <img id="barSliderImage" src="assets/Bar/Foto-10.jpg" alt="Lounge 37 Bar" />
+      <div class="category-media">
+        <img class="dish-photo is-active" src="assets/menu/Steaks/R6II3874.jpg" alt="New Zeeland Lamb Chops" />
+        <img class="dish-photo" src="assets/menu/Steaks/R6II3717.jpg" alt="Argentinian Black Angus Ribeye" />
+        <img class="dish-photo" src="assets/menu/Steaks/R6II3760.jpg" alt="Fillet Mignon Argentinian Black Angus" />
+        <img class="dish-photo" src="assets/menu/Steaks/R6II3963.jpg" alt="Gambas Prawns On The Grill" />
+        <img class="dish-photo" src="assets/menu/Steaks/R6II3812.jpg" alt="Argentinian Striploin" />
       </div>
-    </section>
+    </article>
 
-    <section id="contact" class="contact">
-      <div class="wrap contact-grid">
-        <div>
-          <p class="eyebrow">Reservation & Contact</p>
-          <h2 class="luxury section-title">Reserve Your Table</h2>
-          <div class="contact-list">
-            <span>Kalku iela 8, Old Riga, Latvia</span>
-            <span>+371 22401749</span>
-            <span>burgerlounge37@gmail.com</span>
-            <span>Monday Closed</span>
-            <span>Tue - Thu 16:00 - 23:00</span>
-            <span>Fri - Sun 12:00 - 23:00</span>
-          </div>
-          <p class="social-heading">We are on</p>
-          <div class="social-links" aria-label="Lounge 37 links">
-            <a class="social-link" href="https://www.instagram.com/lounge37riga/" target="_blank" rel="noopener noreferrer">
-              <img class="social-logo" src="assets/logo/instagram.png" alt="" aria-hidden="true" />
-              <span>Instagram</span>
-            </a>
-            <a class="social-link" href="https://www.google.com/search?q=Lounge+37+Riga" target="_blank" rel="noopener noreferrer">
-              <img class="social-logo" src="assets/logo/google.png" alt="" aria-hidden="true" />
-              <span>Google</span>
-            </a>
-            <a class="social-link" href="https://tableagent.com/riga/lounge-37/" target="_blank" rel="noopener noreferrer">
-              <img class="social-logo" src="assets/logo/TableAgent_logo.png" alt="" aria-hidden="true" />
-              <span>TableAgent</span>
-            </a>
-          </div>
-          <p style="margin-top:28px"><a class="btn" href="tel:+37122401749">Call Now</a></p>
-        </div>
-        <iframe title="Lounge 37 map" src="https://maps.google.com/maps?q=Ka%C4%BC%C4%B7u%20iela%208%2C%20Riga%2C%20Latvia&output=embed" loading="lazy" allowfullscreen></iframe>
+    <article class="category" data-category='[
+      {"name":"Grilled Chicken Burger","ingredients":"Brioche bun / chicken / fresh salad / mango-chili chutney / saffron aioli","image":"assets/menu/Burgers/R6II3521.jpg"},
+      {"name":"Truffle Burger","ingredients":"Brioche bun / meat patty / truffle aioli / arugula / swiss cheese","image":"assets/menu/Burgers/R6II3584.jpg"},
+      {"name":"Lounge Classic","ingredients":"Brioche bun / fresh salad / meat patty / tomato / cheddar cheese / saffron aioli","image":"assets/menu/Burgers/R6II3601.jpg"},
+      {"name":"Bacon Cheese Burger","ingredients":"Brioche bun / meat patty / fresh salad / red onion jam / crispy bacon / cheddar","image":"assets/menu/Burgers/R6II3613.jpg"},
+      {"name":"Veggie Burger","ingredients":"Brioche bun / red onion jam / coleslaw salad / cheddar / avocado patty / saffron aioli","image":"assets/menu/Burgers/R6II3646.jpg"},
+      {"name":"Crispy Chicken Burger","ingredients":"Brioche bun / fresh salad / crispy chicken / pickle sauce","image":"assets/menu/Burgers/R6II3675.jpg"}
+    ]'>
+      <div class="category-copy">
+        <p class="category-title">Burgers</p>
+        <h3 class="luxury dish-name">Grilled Chicken Burger</h3>
+        <p class="dish-ingredients">Brioche bun / chicken / fresh salad / mango-chili chutney / saffron aioli</p>
+        <div class="dots" aria-hidden="true"></div>
       </div>
-    </section>
+      <div class="category-media">
+        <img class="dish-photo is-active" src="assets/menu/Burgers/R6II3521.jpg" alt="Grilled Chicken Burger" />
+        <img class="dish-photo" src="assets/menu/Burgers/R6II3584.jpg" alt="Truffle Burger" />
+        <img class="dish-photo" src="assets/menu/Burgers/R6II3601.jpg" alt="Lounge Classic" />
+        <img class="dish-photo" src="assets/menu/Burgers/R6II3613.jpg" alt="Bacon Cheese Burger" />
+        <img class="dish-photo" src="assets/menu/Burgers/R6II3646.jpg" alt="Veggie Burger" />
+        <img class="dish-photo" src="assets/menu/Burgers/R6II3675.jpg" alt="Crispy Chicken Burger" />
+      </div>
+    </article>
+
+    <article class="category" data-category='[
+      {"name":"Smoked Salmon","ingredients":"Lemon infused oil / chili / quail eggs","image":"assets/menu/Starters/R6II3238.jpg"},
+      {"name":"Beef Tartare","ingredients":"Potato espuma / prosciutto crumble","image":"assets/menu/Starters/R6II3268.jpg"},
+      {"name":"Sweet Onion","ingredients":"Eggplant miso pure / goat cheese espuma / basil oil","image":"assets/menu/Starters/R6II3305.jpg"},
+      {"name":"Beef Carpaccio","ingredients":"Arugula / parmesan / truffle oil","image":"assets/menu/Starters/R6II3272.jpg"},
+      {"name":"Selection Of Meats","ingredients":"Prosciutto / fuet / coppa / basturma / olives / grissini","image":"assets/menu/Starters/R6II3294.jpg"},
+      {"name":"Cheese Board","ingredients":"Taleggio / gorgonzola / camembert / manchego / fig jam / berries / grissini","image":"assets/menu/Starters/R6II3333.jpg"}
+    ]'>
+      <div class="category-copy">
+        <p class="category-title">Starters</p>
+        <h3 class="luxury dish-name">Smoked Salmon</h3>
+        <p class="dish-ingredients">Lemon infused oil / chili / quail eggs</p>
+        <div class="dots" aria-hidden="true"></div>
+      </div>
+      <div class="category-media">
+        <img class="dish-photo is-active" src="assets/menu/Starters/R6II3238.jpg" alt="Smoked Salmon" />
+        <img class="dish-photo" src="assets/menu/Starters/R6II3268.jpg" alt="Beef Tartare" />
+        <img class="dish-photo" src="assets/menu/Starters/R6II3305.jpg" alt="Sweet Onion" />
+        <img class="dish-photo" src="assets/menu/Starters/R6II3272.jpg" alt="Beef Carpaccio" />
+        <img class="dish-photo" src="assets/menu/Starters/R6II3294.jpg" alt="Selection Of Meats" />
+        <img class="dish-photo" src="assets/menu/Starters/R6II3333.jpg" alt="Cheese Board" />
+      </div>
+    </article>
+
+    <article class="category" data-category='[
+      {"name":"Lemon - Almond Dessert","ingredients":"Citrus cream / passion fruit sauce","image":"assets/menu/dessert/R6II3454.jpg"},
+      {"name":"New York Cheesecake","ingredients":"Raspberry sauce","image":"assets/menu/dessert/R6II3486.jpg"},
+      {"name":"Chocolate Biscuit","ingredients":"Chocolate espuma / caramelized walnuts","image":"assets/menu/dessert/R6II3419.jpg"},
+      {"name":"Sorbet","ingredients":"Mango / Raspberry / Apple","image":"assets/menu/dessert/R6II4040.jpg"}
+    ]'>
+      <div class="category-copy">
+        <p class="category-title">Desserts</p>
+        <h3 class="luxury dish-name">Lemon - Almond Dessert</h3>
+        <p class="dish-ingredients">Citrus cream / passion fruit sauce</p>
+        <div class="dots" aria-hidden="true"></div>
+      </div>
+      <div class="category-media">
+        <img class="dish-photo is-active" src="assets/menu/dessert/R6II3454.jpg" alt="Lemon - Almond Dessert" />
+        <img class="dish-photo" src="assets/menu/dessert/R6II3486.jpg" alt="New York Cheesecake" />
+        <img class="dish-photo" src="assets/menu/dessert/R6II3419.jpg" alt="Chocolate Biscuit" />
+        <img class="dish-photo" src="assets/menu/dessert/R6II4040.jpg" alt="Sorbet" />
+      </div>
+    </article>
+
+    <article class="category" data-category='[
+      {"name":"Signature Cocktails","ingredients":"Fresh citrus, premium spirits, cold foam, fruit garnish and Lounge 37 bar finish.","image":"assets/menu/Drinks/R6II4140.jpg"},
+      {"name":"Signature Cocktails","ingredients":"Fresh citrus, premium spirits, cold foam, fruit garnish and Lounge 37 bar finish.","image":"assets/menu/Drinks/R6II4202.jpg"},
+      {"name":"Signature Cocktails","ingredients":"Fresh citrus, premium spirits, cold foam, fruit garnish and Lounge 37 bar finish.","image":"assets/menu/Drinks/R6II4237.jpg"},
+      {"name":"Signature Cocktails","ingredients":"Fresh citrus, premium spirits, cold foam, fruit garnish and Lounge 37 bar finish.","image":"assets/menu/Drinks/R6II4199.jpg"}
+    ]'>
+      <div class="category-copy">
+        <p class="category-title">Lounge 37 Bar</p>
+        <h3 class="luxury dish-name">Signature Cocktails</h3>
+        <p class="dish-ingredients">Fresh citrus, premium spirits, cold foam, fruit garnish and Lounge 37 bar finish.</p>
+        <div class="dots" aria-hidden="true"></div>
+      </div>
+      <div class="category-media">
+        <img class="dish-photo is-active" src="assets/menu/Drinks/R6II4140.jpg" alt="Signature Cocktails" />
+        <img class="dish-photo" src="assets/menu/Drinks/R6II4202.jpg" alt="Signature Cocktails" />
+        <img class="dish-photo" src="assets/menu/Drinks/R6II4237.jpg" alt="Signature Cocktails" />
+        <img class="dish-photo" src="assets/menu/Drinks/R6II4199.jpg" alt="Signature Cocktails" />
+      </div>
+    </article>      </div>
+</section>
+
+<section id="bar-gallery" class="bar-gallery">
+  <div class="wrap" style="text-align:center; margin-bottom:48px;">
+    <p class="eyebrow">Special Gallery</p>
+    <h2 class="luxury section-title">Lounge 37 Bar</h2>
+  </div>
+
+  <div class="bar-slider">
+    <img id="barSliderImage" src="assets/Bar/Foto-10.jpg" alt="Lounge 37 Bar" />
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow">Reservation & Contact</p>
+      <h2 class="luxury section-title">Reserve Your Table</h2>
+      <div class="contact-list">
+        <span>Kalku iela 8, Old Riga, Latvia</span>
+        <span>+371 22401749</span>
+        <span>burgerlounge37@gmail.com</span>
+        <span>Monday</span>
+        <span>Monday Hours</span>
+        <span>Tuesday</span>
+        <span>Tuesday Hours 16:00 - 23:00</span>
+        <span>Wednesday</span>
+        <span>Wednesday Hours 16:00 - 23:00</span>
+        <span>Thursday</span>
+        <span>Thursday Hours 16:00 - 23:00</span>
+        <span>Friday</span>
+        <span>Friday Hours 12:00 - 23:00</span>
+        <span>Saturday</span>
+        <span>Saturday Hours 12:00 - 23:00</span>
+        <span>Sunday</span>
+        <span>Sunday Hours 12:00 - 23:00</span>
+      </div>
+      <p class="social-heading">We are on</p>
+      <div class="social-links" aria-label="Lounge 37 links">
+        <a class="social-link" href="https://www.instagram.com/lounge37riga/" target="_blank" rel="noopener noreferrer">
+          <img class="social-logo" src="assets/logo/instagram.png" alt="" aria-hidden="true" />
+          <span>Instagram</span>
+        </a>
+        <a class="social-link" href="https://www.google.com/search?q=Lounge+37+Riga" target="_blank" rel="noopener noreferrer">
+          <img class="social-logo" src="assets/logo/google.png" alt="" aria-hidden="true" />
+          <span>Google</span>
+        </a>
+        <a class="social-link" href="https://tableagent.com/riga/lounge-37/" target="_blank" rel="noopener noreferrer">
+          <img class="social-logo" src="assets/logo/TableAgent_logo.png" alt="" aria-hidden="true" />
+          <span>TableAgent</span>
+        </a>
+      </div>
+      <p style="margin-top:28px"><a class="btn" href="tel:+37122401749">Call Now</a></p>
+    </div>
+    <iframe title="Lounge 37 map" src="https://maps.google.com/maps?q=Ka%C4%BC%C4%B7u%20iela%208%2C%20Riga%2C%20Latvia&output=embed" loading="lazy" allowfullscreen></iframe>
+  </div>
+</section>
+
   </main>
 
   <footer>2026 Lounge 37 - Steakhouse & Burger Bar - Riga</footer>
@@ -860,5 +920,6 @@
       });
     });
   </script>
+
 </body>
 </html>
